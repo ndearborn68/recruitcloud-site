@@ -177,7 +177,7 @@
 </div>
 
 <!-- ── FLOATING CTA ── -->
-<button class="floating-cta" onclick="window.location.href='mailto:info@recruitcloud.io?subject=Question%20for%20RecruitCloud'">
+<button class="floating-cta" onclick="window.location.href='mailto:isaac@recruitcloud.io?subject=Question%20for%20RecruitCloud'">
   <span class="floating-label">recruitcloud.ai — ask us anything</span>
   <span class="btn-icon" style="width:14px;height:14px;background:var(--bg-base);-webkit-mask-image:url('assets/icons/robot-sharp.svg');mask-image:url('assets/icons/robot-sharp.svg')"></span>
 </button>
@@ -192,7 +192,7 @@
   <a href="privacy-policy.html" title="Privacy Policy">Privacy</a>
   <a href="terms-of-service.html" title="Terms of Service">Terms</a>
   <a href="https://www.linkedin.com/in/isaacmarks68/" target="_blank" rel="noopener" title="Isaac Marks on LinkedIn">LinkedIn</a>
-  <a href="mailto:info@recruitcloud.io" title="Email RecruitCloud">info@recruitcloud.io</a>
+  <a href="mailto:isaac@recruitcloud.io" title="Email RecruitCloud">isaac@recruitcloud.io</a>
 </div>
 
 
@@ -372,23 +372,53 @@ function placeHelpPanel(){
   }
   window.__startChyron = function(){ stop = false; loop(); };
   line.addEventListener('click', function(){
-    if(input.style.display !== 'none') return;
-    stop = true; chy.textContent = ''; chy.style.display = 'none'; caret.style.display = 'none';
-    input.style.display = ''; input.focus({preventScroll:true});
+    if(window.__openSearch) window.__openSearch();
   });
-  input.addEventListener('blur', function(){
-    if(input.value.trim()) return;
-    input.style.display = 'none'; chy.style.display = ''; caret.style.display = '';
-    window.__startChyron();
+})();
+</script>
+<div id="srchOverlay" style="display:none;position:fixed;inset:0;z-index:400;background:rgba(0,6,31,0.85);align-items:center;justify-content:center;padding:18px;">
+  <div style="width:600px;max-width:94vw;background:var(--bg-base);border:1px dashed var(--brand);box-shadow:var(--box-glow);">
+    <div class="ab-top" style="display:flex;align-items:center;gap:14px;">
+      <div class="traffic"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+      <span class="ab-title">recruitcloud-$ new-candidate-search</span>
+      <button id="srchClose" aria-label="close" style="margin-left:auto;background:none;border:none;color:var(--fg-muted);font:600 16px/1 var(--font-mono);cursor:pointer;padding:4px 10px;">&times;</button>
+    </div>
+    <div style="padding:22px 26px 26px;display:flex;flex-direction:column;gap:6px;font-family:var(--font-mono);">
+      <label for="srchJD" style="color:var(--success);font:500 13px/1 var(--font-mono);"># the role you need &mdash; paste a job description or describe it</label>
+      <textarea id="srchJD" rows="6" style="background:var(--bg-terminal);border:1px dashed var(--divider);color:var(--fg-primary);font:400 14px/1.5 var(--font-mono);padding:10px 12px;resize:vertical;outline:none;"></textarea>
+      <label for="srchLoc" style="color:var(--success);font:500 13px/1 var(--font-mono);margin-top:10px;"># location</label>
+      <input id="srchLoc" style="background:var(--bg-terminal);border:1px dashed var(--divider);color:var(--fg-primary);font:400 14px/1.5 var(--font-mono);padding:10px 12px;outline:none;">
+      <label for="srchEmail" style="color:var(--success);font:500 13px/1 var(--font-mono);margin-top:10px;"># your email</label>
+      <input id="srchEmail" type="email" style="background:var(--bg-terminal);border:1px dashed var(--divider);color:var(--fg-primary);font:400 14px/1.5 var(--font-mono);padding:10px 12px;outline:none;">
+      <div id="srchErr" style="display:none;color:var(--danger);font:400 12px/1.4 var(--font-mono);margin-top:8px;"></div>
+      <button id="srchSend" class="btn-primary" style="margin-top:16px;justify-content:center;">start the search &rarr;</button>
+      <div style="color:var(--fg-subdued);font:400 12px/1.4 var(--font-mono);margin-top:6px;">goes straight to isaac@recruitcloud.io &mdash; we reply with a sourcing plan, not a pitch</div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  const ov = document.getElementById('srchOverlay');
+  if(!ov) return;
+  const jd = document.getElementById('srchJD'), loc = document.getElementById('srchLoc'),
+        em = document.getElementById('srchEmail'), err = document.getElementById('srchErr');
+  window.__openSearch = function(prefill){
+    ov.style.display = 'flex';
+    if(prefill && !jd.value) jd.value = prefill;
+    setTimeout(function(){ jd.focus(); }, 30);
+  };
+  function close(){ ov.style.display = 'none'; err.style.display = 'none'; }
+  document.getElementById('srchClose').addEventListener('click', close);
+  ov.addEventListener('click', function(e){ if(e.target === ov) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+  document.getElementById('srchSend').addEventListener('click', function(){
+    const j = jd.value.trim(), l = loc.value.trim(), m = em.value.trim();
+    if(!j || !m){ err.textContent = '# need at least the role and your email'; err.style.display = 'block'; return; }
+    window.location.href = 'mailto:isaac@recruitcloud.io?subject='
+      + encodeURIComponent('Candidate search' + (l ? ' — ' + l : ''))
+      + '&body=' + encodeURIComponent('Job description / role:\n' + j + '\n\nLocation: ' + (l || '-') + '\nContact email: ' + m);
   });
-  input.addEventListener('keydown', function(e){
-    if(e.key === 'Enter' && input.value.trim()){
-      const q = input.value.trim();
-      window.location.href = 'mailto:info@recruitcloud.io?subject='
-        + encodeURIComponent('Candidate sourcing request')
-        + '&body=' + encodeURIComponent("I'm looking for: " + q + "\n\nName:\nCompany:\nBest phone/email:");
-    }
-  });
+  if(location.hash === '#search') window.__openSearch();
 })();
 </script>
 </body>
