@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ — RecruitCloud</title>
+<meta name="description" content="RecruitCloud FAQ: build vs buy, how this differs from an agency or RPO, what you keep, integrating with your ATS, and whether candidates can tell it's automated.">
+<meta name="theme-color" content="#7d9efd">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RecruitCloud">
+<meta property="og:title" content="FAQ — RecruitCloud">
+<meta property="og:description" content="RecruitCloud FAQ: build vs buy, how this differs from an agency or RPO, what you keep, integrating with your ATS, and whether candidates can tell it's automated.">
+<meta property="og:image" content="https://recruitcloud.io/assets/og-banner.png">
+<link rel="preload" href="fonts/SF-Mono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/tailwind.css">
+<script defer src="moltsets-tailwind.js"></script>
+<link rel="stylesheet" href="moltsets-base.css">
+<link rel="stylesheet" href="theme-navy.css">
+<style>
+  .docpane{ background:var(--bg-terminal); padding:34px 40px; overflow-y:auto; color:var(--fg-secondary); font-size:14px; }
+  .doc-eyebrow{ color:var(--fg-muted); font:400 12px/1 var(--font-mono); letter-spacing:0.14em; text-transform:uppercase; margin:0 0 12px; }
+  .doc-h{ font:600 26px/1.15 var(--font-mono); color:var(--fg-primary); letter-spacing:-0.02em; margin:0 0 10px; }
+  .doc-sub{ color:var(--fg-secondary); font-size:15px; line-height:1.6; margin:0 0 28px; max-width:720px; }
+  .qa{ border-top:1px dashed var(--fg-muted); padding:20px 0; max-width:840px; }
+  .qa .q{ color:var(--fg-primary); font:600 15px/1.4 var(--font-mono); display:flex; gap:10px; }
+  .qa .q .mk{ color:var(--brand); }
+  .qa .a{ color:var(--fg-secondary); font-size:14px; line-height:1.65; margin:10px 0 0 22px; }
+  .qa .a b{ color:var(--success); font-weight:600; }
+  .doc-cta{ display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:var(--bg-base); font:600 14px/1 var(--font-mono); padding:13px 28px; margin-top:26px; text-decoration:none; }
+  .doc-cta:hover{ background:var(--brand-tint); }
+  .app-box.docbox{ width:1002px; max-width:100%; height:auto; }
+  .ab-body.docbody{ display:block; overflow:visible; flex:none; }
+  @media (max-width:1040px){
+    .mh{ padding:0 16px; } .stage{ padding:16px; }
+    .app-box.docbox{ width:100% !important; height:auto !important; }
+    .ab-body.docbody{ overflow:visible !important; }
+    .docpane{ padding:22px 18px; } .doc-h{ font-size:22px; }
+  }
+</style>
+</head>
+<body class="flex flex-col min-h-screen page-bg">
+
+<!-- HEADER -->
+<div class="mh">
+  <div class="mh-logo">
+    <a href="index.html" style="text-decoration:none;" title="RecruitCloud home"><div class="logo-type">
+      <span>recruitcloud</span>
+      <span style="display:inline-flex;align-items:center;margin-left:4px;"><span style="display:inline-block;width:9px;height:17px;background:var(--brand);"></span></span>
+    </div></a>
+  </div>
+  <nav class="mh-nav">
+    <a href="how-it-works.html" class="btn-text">how it works</a>
+    <a href="what-you-build.html" class="btn-text">what you build</a>
+    <a href="pricing.html" class="btn-text">pricing</a>
+    <a href="faq.html" class="btn-text accent">faq</a>
+  </nav>
+  <div class="mh-right">
+    <button class="mh-burger" id="mhBurger" aria-label="menu"><span></span><span></span><span></span></button>
+    <button class="btn-primary" onclick="window.location.href='https://calendly.com/isaacmarks/isaac-general'">book a build session<span class="btn-icon" style="-webkit-mask-image:url('assets/icons/chevron-right.svg');mask-image:url('assets/icons/chevron-right.svg')"></span></button>
+  </div>
+</div>
+<div class="mh-mpanel" id="mhMPanel">
+  <nav class="mh-mpanel-nav">
+    <a class="mh-mlink" href="how-it-works.html">how it works</a>
+    <a class="mh-mlink" href="what-you-build.html">what you build</a>
+    <a class="mh-mlink" href="pricing.html">pricing</a>
+    <a class="mh-mlink" href="faq.html">faq</a>
+  </nav>
+  <button class="btn-primary mh-mpanel-cta" onclick="window.location.href='https://calendly.com/isaacmarks/isaac-general'">book a build session</button>
+</div>
+
+<!-- CONSOLE -->
+<div class="stage">
+  <div class="app-box docbox">
+    <span class="cm tl"></span><span class="cm tr"></span><span class="cm bl"></span><span class="cm br"></span>
+    <div class="ab-top">
+      <div class="traffic"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+      <span class="ab-title">RecruitCloud Console — faq</span>
+    </div>
+    <div class="ab-body docbody">
+      <div class="docpane">
+        <div class="doc-eyebrow">// straight answers</div>
+        <h1 class="doc-h">Frequently asked questions</h1>
+        <p class="doc-sub">The questions corporate talent leaders actually ask before they build with us.</p>
+
+        <div class="qa"><div class="q"><span class="mk">?</span> Isn't building harder than just buying a SaaS tool?</div><div class="a">Most teams buy a tool and stall on the hard part — workflow design, data quality, recruiter adoption, governance. That's where the ROI dies. We do that part <b>with</b> you and hand over a working system. You get the outcome of building without the multi-quarter R&D.</div></div>
+
+        <div class="qa"><div class="q"><span class="mk">?</span> How is this different from an agency or RPO?</div><div class="a">An agency rents you their effort, then walks away with the relationship and the data. We build you the <b>capability</b> and walk away leaving you the <b>asset</b> — the agents, sequences, and data are yours to keep.</div></div>
+
+        <div class="qa"><div class="q"><span class="mk">?</span> We already have an ATS and some tools. Does this replace them?</div><div class="a">No — we build the sourcing and engagement layer on top of what you own. Modular by design: your ATS stays the system-of-record, and we add the speed layer around it.</div></div>
+
+        <div class="qa"><div class="q"><span class="mk">?</span> What happens to everything if we stop working with you?</div><div class="a">You keep all of it. <b>That's the entire point.</b> No lock-in, no "our platform owns your pipeline." The system, the data, and the playbooks stay with your team.</div></div>
+
+        <div class="qa"><div class="q"><span class="mk">?</span> Will candidates be able to tell it's automated?</div><div class="a">Only if it's bad. Spray-and-pray gets ignored — InMail reply rates are under 10%, and people hang up the second something feels robotic. We build personalized, signal-driven sequences that read like a recruiter who did their homework. Personalized outreach replies at roughly <b>18% vs ~6%</b> for templates.</div></div>
+
+        <div class="qa"><div class="q"><span class="mk">?</span> Who's behind this?</div><div class="a">Isaac Marks — an ex-staffing founder who built and exited a recruiting firm, and now builds these AI sourcing systems in public (<a href="https://www.linkedin.com/in/isaacmarks68" target="_blank" rel="noopener" style="color:var(--brand);">LinkedIn &rarr;</a>). You end up owning the asset <b>and</b> understanding how it runs.</div></div>
+
+        <div class="qa"><div class="q"><span class="mk">?</span> How fast until something is live?</div><div class="a">A Build Sprint stands up your first working sourcing system for one role family, so you see it run before committing to more. Book a build session and we'll scope the timeline against your roles.</div></div>
+
+        <a class="doc-cta" href="https://calendly.com/isaacmarks/isaac-general">book a build session →</a>
+      </div>
+    </div>
+    <div class="ab-prompt"><div class="prompt-line"><span class="p">recruitcloud-$</span><span class="caret"></span><input class="pinp" placeholder="# ask me anything else" autocomplete="off" spellcheck="false"></div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="mf">
+  <a href="how-it-works.html">How it works</a>
+  <a href="what-you-build.html">What you build</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="faq.html">FAQ</a>
+  <a href="https://www.linkedin.com/in/isaacmarks68/" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="mailto:info@recruitcloud.io">info@recruitcloud.io</a>
+</div>
+
+<script>
+(function(){
+  function rand(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+  function delay(ms){return new Promise(r=>setTimeout(r,ms));}
+  const burger=document.getElementById('mhBurger'), panel=document.getElementById('mhMPanel');
+  if(!burger||!panel) return;
+  const links=Array.prototype.slice.call(panel.querySelectorAll('.mh-mlink'));
+  let open=false,closeTimer=null;
+  function openMenu(){ if(open)return; open=true; clearTimeout(closeTimer); burger.classList.add('open'); panel.classList.remove('closing'); panel.classList.add('open'); links.forEach(l=>l.classList.remove('shown')); (async()=>{for(const l of links){await delay(rand(45,85)); if(!open)return; l.classList.add('shown');}})(); }
+  function closeMenu(){ if(!open)return; open=false; burger.classList.remove('open'); panel.classList.add('closing'); closeTimer=setTimeout(()=>{panel.classList.remove('open','closing'); links.forEach(l=>l.classList.remove('shown'));},140); }
+  burger.addEventListener('click',()=>open?closeMenu():openMenu());
+})();
+</script>
+</body>
+</html>

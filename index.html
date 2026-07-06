@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js')</script>
+
+<title>RecruitCloud — Build your own AI sourcing system</title>
+<meta name="description" content="We help corporate talent teams build their own AI sourcing system — agents that find candidates, sequencers that engage them, and a pipeline you own. Fill roles in-house, cut vendor spend, own your stack.">
+<meta name="theme-color" content="#7d9efd">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RecruitCloud">
+<meta property="og:title" content="RecruitCloud — Build your own AI sourcing system">
+<meta property="og:description" content="We help corporate talent teams build their own AI sourcing system — agents that find candidates, sequencers that engage them, and a pipeline you own. Fill roles in-house, cut vendor spend, own your stack.">
+<meta property="og:image" content="https://recruitcloud.io/assets/og-banner.png">
+
+<link rel="preload" href="fonts/SF-Mono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/SF-Mono-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- ── Design system (mirrored from moltsets.com — RecruitCloud's sister product) ── -->
+<link rel="stylesheet" href="assets/tailwind.css">
+<script defer src="moltsets-tailwind.js"></script>
+<link rel="stylesheet" href="moltsets-base.css">
+<link rel="stylesheet" href="theme-navy.css">
+<!-- RecruitCloud palette (deep navy + periwinkle). -->
+
+<style>
+/* ── Responsive ── */
+  @media (max-width:1040px) {
+    .stage { flex:none; overflow:visible; padding:16px 16px 24px; flex-direction:column; align-items:stretch; justify-content:flex-start; gap:20px; min-height:0; }
+    .app-box, .app-box.wide { width:100% !important; height:calc(100dvh - 150px) !important; flex:none !important; display:flex; flex-direction:column; min-height:0; overflow:hidden; }
+    .ab-top { flex-shrink:0; }
+    .ab-body { flex:1; min-height:0 !important; max-height:none !important; overflow-y:auto !important; overflow-x:hidden; display:flex !important; flex-direction:column !important; }
+    .chat-pane { min-height:0 !important; max-height:none !important; border-right:none !important; overflow-y:auto !important; flex:1; }
+    .ab-prompt { flex-shrink:0; display:block !important; border-top:1px solid var(--brand) !important; position:static !important; background:var(--bg-base); }
+    .stage-hint { display:flex !important; opacity:1 !important; margin-top:0; }
+    .stage-hint-cta { width:auto !important; align-self:center; padding:13px 32px !important; }
+    .helpp.helpp-page { display:flex !important; background:transparent !important; padding:24px !important; border-top:1px solid var(--brand) !important; gap:22px !important; overflow:visible !important; width:100% !important; flex:none !important; }
+    .helpp.helpp-page .helpp-title { font-size:22px; }
+    .helpp.helpp-page .helpp-item { font-size:15px; padding:8px 0; align-items:flex-start; }
+    .helpp.helpp-page .helpp-feat { padding:24px; gap:14px; }
+    .helpp.helpp-page .helpp-featttl { font-size:18px; }
+    .helpp.helpp-page .cb { font-size:15px; padding:6px 0; align-items:flex-start; }
+    .mf { flex-shrink:0; padding:16px; flex-wrap:wrap; gap:8px; height:auto; }
+    .hero { flex-direction:column; gap:16px; padding:16px !important; }
+    .indent-list { padding:16px 0 0 !important; }
+  }
+@media (max-width:600px) {
+    .mh { padding:0 16px; }
+    .hero-headline { font-size:18px !important; }
+    .floating-cta { right:12px !important; }
+    .chat-pane { padding:0 !important; }
+    .helpp.helpp-page { width:100% !important; }
+  }
+  html.js #stageBox        { width:320px; height:28px; }
+  html.js #stageBox.wide   { width:1002px; }
+  html.js #abBody          { opacity:0; }
+  html.js #abPrompt        { display:none; }
+  html.js .anim-hide       { opacity:0; }
+  html:not(.js) #stageBox     { width:1002px; }
+  html:not(.js) .reveal       { opacity:1; }
+  html:not(.js) .stage-hint   { opacity:1; }
+</style>
+</head>
+<body class="flex flex-col min-h-screen page-bg">
+
+<!-- ── HEADER ── -->
+<div class="mh">
+  <div class="mh-logo">
+    <a href="index.html" style="text-decoration:none;" title="RecruitCloud home"><div class="logo-type">
+      <span id="logoTyped"></span>
+      <span style="display:inline-flex;align-items:center;margin-left:4px;">
+        <span style="display:inline-block;width:9px;height:17px;background:var(--brand);"></span>
+      </span>
+    </div></a>
+  </div>
+  <nav class="mh-nav">
+    <a href="how-it-works.html" class="btn-text" title="How RecruitCloud builds your system">how it works</a>
+    <a href="what-you-build.html" class="btn-text" title="What you build and own">what you build</a>
+    <a href="pricing.html" class="btn-text" title="RecruitCloud pricing">pricing</a>
+    <a href="faq.html" class="btn-text" title="RecruitCloud FAQ">faq</a>
+  </nav>
+  <div class="mh-right">
+    <button class="mh-burger" id="mhBurger" aria-label="menu"><span></span><span></span><span></span></button>
+    <button class="btn-primary" onclick="window.location.href='https://calendly.com/isaacmarks/isaac-general'">book a build session<span class="btn-icon" style="-webkit-mask-image:url('assets/icons/chevron-right.svg');mask-image:url('assets/icons/chevron-right.svg')"></span></button>
+  </div>
+</div>
+<div class="mh-mpanel" id="mhMPanel">
+  <nav class="mh-mpanel-nav" id="mhMPanelNav">
+    <a class="mh-mlink" href="how-it-works.html">how it works</a>
+    <a class="mh-mlink" href="what-you-build.html">what you build</a>
+    <a class="mh-mlink" href="pricing.html">pricing</a>
+    <a class="mh-mlink" href="faq.html">faq</a>
+  </nav>
+  <button class="btn-primary mh-mpanel-cta" onclick="window.location.href='https://calendly.com/isaacmarks/isaac-general'">book a build session<span class="btn-icon" style="-webkit-mask-image:url('assets/icons/chevron-right.svg');mask-image:url('assets/icons/chevron-right.svg')"></span></button>
+</div>
+
+
+<!-- ── STAGE ── -->
+<div class="stage">
+  <div class="app-box" id="stageBox">
+    <span class="cm tl"></span><span class="cm tr"></span>
+    <span class="cm bl"></span><span class="cm br"></span>
+    <div class="ab-top">
+      <div class="traffic">
+        <span class="dot r"></span>
+        <span class="dot y"></span>
+        <span class="dot g"></span>
+      </div>
+      <span class="ab-title">RecruitCloud Console</span>
+    </div>
+    <div class="ab-body" id="abBody">
+      <div class="chat-pane" id="chatPane">
+        <div class="hero px-6 anim-hide" id="heroBlock">
+          <div class="hero-headlines" id="heroHeadlines">
+            <h1 class="hero-headline anim-hide" id="hh0" style="font-size:22px;">Build your own AI sourcing system &mdash; stop renting your pipeline.</h1>
+            <div style="display:flex;flex-direction:column;gap:4px;margin-top:8px;">
+              <div class="text-body font-normal anim-hide" id="hh1a" style="color:var(--fg-secondary);">We help corporate talent teams build their own AI sourcing system: agents that find candidates, sequencers that engage them, and a pipeline you own &mdash; so you fill roles in-house and cut vendor spend.</div>
+            </div>
+          </div>
+        </div>
+        <div class="px-6 pt-2 anim-hide" id="diffBlock">
+          <h2 class="h2" style="padding:8px 0 8px;color:var(--fg-secondary);">What Makes RecruitCloud Different:</h2>
+          <div class="flex flex-col" style="border-left:3px solid var(--brand);padding-left:24px;">
+            <div id="dt0" class="font-mono text-body text-success anim-hide" style="padding:0 0 4px;border-bottom:1px dashed var(--fg-muted);">You own the system &ndash; your agents, your data, your sequences, forever</div>
+            <div id="dt1" class="font-mono text-body text-success anim-hide" style="padding:4px 0 8px;border-bottom:1px dashed var(--fg-muted);">Cut vendor spend &ndash; fill roles in-house, not through 20% contingency fees</div>
+            <div id="dt2" class="font-mono text-body text-success anim-hide" style="padding:4px 0 0;">Engage candidates properly &ndash; personalized sequencers, not spray-and-pray blasts</div>
+          </div>
+        </div>
+        <div class="px-6 anim-hide" id="nextBlock">
+          <h3 class="h2" style="padding:8px 0 10px;color:var(--fg-secondary);">What would you like to do next?</h3>
+          <div class="indent-list">
+            <div class="indent-row anim-hide" id="nb0"><span class="indent-icon" style="background:var(--success);"></span><span class="indent-text">1 / <a href="how-it-works.html" class="action-link" title="How we build your sourcing system">See how we build your sourcing system.</a></span></div>
+            <div class="indent-row anim-hide" id="nb1"><span class="indent-icon" style="background:var(--success);"></span><span class="indent-text">2 / <a href="what-you-build.html" class="action-link" title="What you build and own">See what you'll own.</a></span></div>
+            <div class="indent-row anim-hide" id="nb2"><span class="indent-icon" style="background:var(--success);"></span><span class="indent-text">3 / <a href="https://calendly.com/isaacmarks/isaac-general" class="action-link" title="Book a build session">Book a build session.</a></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="helpp" id="helpPanel" style="gap:8px;padding:16px; justify-content:space-between;">
+        <div class="helpp-title reveal"><a href="what-you-build.html" title="What you build and own" class="api-docs">What you build &amp; own with RecruitCloud</a></div>
+        <h2 class="reveal" style="font:400 12px/16px var(--font-mono);color:var(--fg-muted);margin:0;">Your sourcing system, component by component</h2>
+        <div class="helpp-item reveal"><span class="helpp-chev"></span><span class="helpp-cmd" style="color:var(--fg-secondary);">AI sourcing agents</span><span class="helpp-desc" style="color:var(--fg-secondary);">(find off-market talent)</span></div>
+        <div class="helpp-item reveal"><span class="helpp-chev"></span><span class="helpp-cmd" style="color:var(--fg-secondary);">candidate engagement sequencers</span><span class="helpp-desc" style="color:var(--fg-secondary);">(email · LinkedIn · SMS)</span></div>
+        <div class="helpp-item reveal"><span class="helpp-chev"></span><span class="helpp-cmd" style="color:var(--fg-secondary);">an intent-signal data layer</span><span class="helpp-desc" style="color:var(--fg-secondary);">(your data)</span></div>
+        <div class="helpp-item reveal"><span class="helpp-chev"></span><span class="helpp-cmd" style="color:var(--fg-secondary);">a live sourcing pipeline</span><span class="helpp-desc" style="color:var(--fg-secondary);">(yours to keep)</span></div>
+        <div class="helpp-item reveal"><span class="helpp-chev"></span><span class="helpp-cmd" style="color:var(--fg-secondary);">a system you improve forever</span><span class="helpp-desc" style="color:var(--fg-secondary);">(no lock-in)</span></div>
+        <div class="helpp-feat reveal" style="gap:11px;">
+          <h2 class="helpp-featttl text-sm" style="margin:0;">Why teams build with RecruitCloud</h2>
+          <div class="cb text-sm font-bold"><i class="icon icon-on"></i>Own your stack &ndash; stop renting SaaS</div>
+          <div class="cb text-sm font-bold"><i class="icon icon-on"></i>Cut vendor &amp; agency spend</div>
+          <div class="cb text-sm font-bold"><i class="icon icon-on"></i>Built by an ex-staffing founder</div>
+        </div>
+        <div class="helpp-feat reveal" style="gap:11px;margin-top:12px;">
+          <h2 class="helpp-featttl text-sm" style="margin:0;">recruitcloud-$ whoami</h2>
+          <div class="cb text-sm font-bold"><i class="icon icon-on"></i>Isaac Marks &ndash; founder</div>
+          <div class="cb text-sm"><i class="icon icon-on"></i>20+ years in recruiting; founded &amp; exited a staffing firm</div>
+          <div class="cb text-sm"><i class="icon icon-on"></i>Builds these sourcing systems in public</div>
+          <a class="cb text-sm font-bold" href="https://www.linkedin.com/in/isaacmarks68" target="_blank" rel="noopener" style="color:var(--brand);text-decoration:none;">linkedin.com/in/isaacmarks68 &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="ab-prompt" id="abPrompt">
+      <div class="prompt-line">
+        <span class="p">recruitcloud-$</span>
+        <span class="caret" id="promptCursor"></span>
+        <input class="pinp" id="promptInput" placeholder="# ask me anything about building your sourcing system" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-hint" id="stageHint">
+    <button class="stage-hint-cta" onclick="window.location.href='https://calendly.com/isaacmarks/isaac-general'">book a build session<span class="stage-hint-cta-icon"></span></button>
+  </div>
+</div>
+
+<!-- ── FLOATING CTA ── -->
+<button class="floating-cta" onclick="window.location.href='mailto:info@recruitcloud.io?subject=Question%20for%20RecruitCloud'">
+  <span class="floating-label">recruitcloud.ai — ask us anything</span>
+  <span class="btn-icon" style="width:14px;height:14px;background:var(--bg-base);-webkit-mask-image:url('assets/icons/robot-sharp.svg');mask-image:url('assets/icons/robot-sharp.svg')"></span>
+</button>
+
+
+<!-- ── FOOTER ── -->
+<div class="mf">
+  <a href="how-it-works.html" title="How it works">How it works</a>
+  <a href="what-you-build.html" title="What you build">What you build</a>
+  <a href="pricing.html" title="Pricing">Pricing</a>
+  <a href="faq.html" title="FAQ">FAQ</a>
+  <a href="https://www.linkedin.com/in/isaacmarks68/" target="_blank" rel="noopener" title="Isaac Marks on LinkedIn">LinkedIn</a>
+  <a href="mailto:info@recruitcloud.io" title="Email RecruitCloud">info@recruitcloud.io</a>
+</div>
+
+
+<script>
+function rand(a,b){ return Math.floor(Math.random()*(b-a+1))+a; }
+function delay(ms){ return new Promise(r=>setTimeout(r,ms)); }
+
+const WORD = 'recruitcloud';
+const LOGO_DELAYS = [300,110,90,80,95,80,100,85,90];
+async function typeLogo(){
+  const el = document.getElementById('logoTyped');
+  await delay(LOGO_DELAYS[0]);
+  for(let i=0;i<WORD.length;i++){ el.textContent=WORD.slice(0,i+1); await delay(LOGO_DELAYS[i+1]||90); }
+}
+
+const TFRAMES = Array.from({length:7},(_,i)=>`assets/thinking/frame-${i+1}.svg`);
+const THOLD = [()=>rand(80,110),()=>rand(90,120),()=>rand(220,300),()=>rand(240,320),()=>rand(160,220),()=>rand(90,120),()=>rand(80,100)];
+function buildIcon(container){
+  TFRAMES.forEach((src,i)=>{ const d=document.createElement('div'); d.className='frame'+(i===0?' active':''); const img=document.createElement('img'); img.src=src; img.alt=''; d.appendChild(img); container.appendChild(d); });
+}
+function startIcon(container){
+  const frames=container.querySelectorAll('.frame'); let cur=0;
+  function next(){ frames[cur].classList.remove('active'); cur=(cur+1)%frames.length; frames[cur].classList.add('active'); setTimeout(next,THOLD[cur]()); }
+  setTimeout(next,rand(0,300));
+}
+function animateDots(el){
+  const states=['thinking.','thinking..','thinking...']; let i=0;
+  function step(){ i=(i+1)%states.length; el.textContent=states[i]; setTimeout(step,rand(260,480)); }
+  setTimeout(step,rand(0,400));
+}
+function showThinking(container, beforeNode){
+  const think=document.createElement('div'); think.className='think';
+  const icon=document.createElement('div'); icon.className='think-icon';
+  const dots=document.createElement('span'); dots.textContent='thinking.';
+  think.appendChild(icon); think.appendChild(dots);
+  if(beforeNode){ container.insertBefore(think, beforeNode); } else { container.appendChild(think); }
+  buildIcon(icon); startIcon(icon); animateDots(dots);
+  return think;
+}
+async function revealAll(parent, stepMs=[80,130]){
+  const items=parent.querySelectorAll('.reveal');
+  for(const item of items){ await delay(rand(stepMs[0],stepMs[1])); item.classList.add('shown'); }
+}
+
+function screenHome(pane){
+  (async()=>{
+    document.getElementById('heroBlock').style.opacity = '1';
+    await delay(rand(400,600));
+    document.getElementById('hh0').style.opacity = '1';
+    await delay(rand(140,200));
+    document.getElementById('hh1a').style.opacity = '1';
+    await delay(rand(120,160));
+    await delay(rand(200,300));
+    const diffBlock = document.getElementById('diffBlock');
+    const think1 = showThinking(pane, diffBlock);
+    await delay(rand(600,900));
+    think1.remove();
+    diffBlock.style.opacity = '1';
+    await delay(rand(80,120));
+    for(let i=0;i<3;i++){ document.getElementById('dt'+i).style.opacity='1'; await delay(rand(100,160)); }
+    await delay(rand(300,450));
+    revealAll(document.getElementById('helpPanel'), [70,110]);
+    await delay(rand(200,300));
+    const nextBlock = document.getElementById('nextBlock');
+    const think2 = showThinking(pane, nextBlock);
+    await delay(rand(600,900));
+    think2.remove();
+    nextBlock.style.opacity = '1';
+    await delay(rand(80,120));
+    document.getElementById('nb0').style.opacity = '1';
+    await delay(rand(120,180));
+    document.getElementById('nb1').style.opacity = '1';
+    await delay(rand(180,240));
+    document.getElementById('nb2').style.opacity = '1';
+  })();
+}
+
+(async()=>{
+  await document.fonts.ready;
+  await typeLogo();
+  placeHelpPanel();
+  if(window.innerWidth <= 1040){ await delay(520); }
+  document.querySelector('.app-box').classList.add('wide');
+  await delay(180);
+  document.querySelector('.app-box').style.height = '760px';
+  await delay(280);
+  document.getElementById('abBody').style.opacity = '1';
+  document.getElementById('abPrompt').style.display = 'block';
+  document.getElementById('promptInput').focus({preventScroll:true});
+  await delay(120);
+  const pane = document.getElementById('chatPane');
+  const think = showThinking(pane, document.getElementById('heroBlock'));
+  await delay(rand(700,1000));
+  think.remove();
+  screenHome(pane);
+  await delay(2000);
+  document.getElementById('stageHint').classList.add('shown');
+})();
+
+function placeHelpPanel(){
+  const hp = document.getElementById('helpPanel');
+  const stage = document.querySelector('.stage');
+  const abBody = document.getElementById('abBody');
+  if(!hp || !stage || !abBody) return;
+  const mobile = window.innerWidth <= 1040;
+  if(mobile && hp.parentElement !== stage){
+    hp.classList.add('helpp-page');
+    stage.appendChild(hp);
+  } else if(!mobile && hp.parentElement !== abBody){
+    hp.classList.remove('helpp-page');
+    abBody.appendChild(hp);
+  }
+}
+(function(){
+  let raf = null;
+  window.addEventListener('resize', function(){
+    if(raf) return;
+    raf = requestAnimationFrame(function(){ raf = null; placeHelpPanel(); });
+  }, {passive:true});
+})();
+
+(function(){
+  const burger = document.getElementById('mhBurger');
+  const panel  = document.getElementById('mhMPanel');
+  if(!burger || !panel) return;
+  const links = Array.prototype.slice.call(panel.querySelectorAll('.mh-mlink'));
+  let open = false, closeTimer = null;
+  function openMenu(){
+    if(open) return;
+    open = true; clearTimeout(closeTimer);
+    burger.classList.add('open'); burger.setAttribute('aria-expanded','true');
+    panel.classList.remove('closing'); panel.classList.add('open');
+    links.forEach(l => l.classList.remove('shown'));
+    (async()=>{ for(const l of links){ await delay(rand(45,85)); if(!open) return; l.classList.add('shown'); } })();
+  }
+  function closeMenu(){
+    if(!open) return;
+    open = false;
+    burger.classList.remove('open'); burger.setAttribute('aria-expanded','false');
+    panel.classList.add('closing');
+    closeTimer = setTimeout(()=>{ panel.classList.remove('open','closing'); links.forEach(l => l.classList.remove('shown')); }, 140);
+  }
+  burger.addEventListener('click', ()=> open ? closeMenu() : openMenu());
+})();
+
+(function(){
+  const fcta=document.querySelector('.floating-cta'); if(!fcta) return;
+  let t;
+  fcta.addEventListener('click',function(e){ if(!fcta.classList.contains('expanded')){ fcta.classList.add('expanded'); t=setTimeout(()=>fcta.classList.remove('expanded'),3000); } });
+})();
+</script>
+</body>
+</html>

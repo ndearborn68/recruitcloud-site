@@ -1,0 +1,37 @@
+/* ── RecruitCloud · NAVY terminal theme ──────────────────────────────────────
+   recruitcloud.io palette: deep navy #00092c/#03113e + periwinkle #7d9efd accent,
+   recruitcloud green/red/yellow for the window chrome. Overrides moltsets tokens.
+   Load AFTER moltsets-base.css. ─────────────────────────────────────────────── */
+:root {
+  /* Brand — periwinkle ramp */
+  --brand:          #7d9efd;
+  --brand-tint:     #9db8ff;   /* hover (lighter on dark) */
+  --brand-dim:      #5b7ce8;   /* active */
+  --brand-stroke:   #6c8cf5;
+  --brand-bg:       #28345c;   /* dashed-border / chip tint */
+  --fg-accent:      #7d9efd;
+
+  /* Surfaces — deep navy */
+  --bg-base:        #00092c;   /* terminal box + page anchor */
+  --bg-elevated:    #0a1547;   /* header / footer bar */
+  --bg-terminal:    rgba(125,158,253,0.10);
+  --bg-chip:        #1c2850;
+  --bg-chip-alt:    #141e40;
+
+  /* Foreground — light slate on navy */
+  --fg-bright:      #ffffff;
+  --fg-primary:     #eef2fb;
+  --fg-secondary:   #c3cde6;
+  --fg-muted:       #8b97b8;
+  --fg-subdued:     #7a86a6;
+
+  /* Status — recruitcloud chrome colors (traffic lights) */
+  --success:        #1ec46a;   /* brightened recruitcloud green for navy legibility */
+  --hint:           #f7b900;   /* recruitcloud yellow */
+  --danger:         #f33f54;   /* recruitcloud red */
+
+  --divider:        rgba(125,158,253,0.30);
+  --divider-dim:    rgba(125,158,253,0.15);
+}
+/* solid navy field behind the floating terminal (drop moltsets grain texture) */
+.page-bg { background-image: none; background-color: #00061f; }

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How it works — RecruitCloud</title>
+<meta name="description" content="How RecruitCloud builds your own AI sourcing system: map, build sourcing agents, wire the data layer, build sequencers, integrate and train, then you own it and improve it.">
+<meta name="theme-color" content="#7d9efd">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RecruitCloud">
+<meta property="og:title" content="How it works — RecruitCloud">
+<meta property="og:description" content="How RecruitCloud builds your own AI sourcing system: map, build sourcing agents, wire the data layer, build sequencers, integrate and train, then you own it and improve it.">
+<meta property="og:image" content="https://recruitcloud.io/assets/og-banner.png">
+<link rel="preload" href="fonts/SF-Mono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/tailwind.css">
+<script defer src="moltsets-tailwind.js"></script>
+<link rel="stylesheet" href="moltsets-base.css">
+<link rel="stylesheet" href="theme-navy.css">
+<style>
+  .docpane{ background:var(--bg-terminal); padding:34px 40px; overflow-y:auto; color:var(--fg-secondary); font-size:14px; }
+  .doc-eyebrow{ color:var(--fg-muted); font:400 12px/1 var(--font-mono); letter-spacing:0.14em; text-transform:uppercase; margin:0 0 12px; }
+  .doc-h{ font:600 26px/1.15 var(--font-mono); color:var(--fg-primary); letter-spacing:-0.02em; margin:0 0 10px; }
+  .doc-sub{ color:var(--fg-secondary); font-size:15px; line-height:1.6; margin:0 0 30px; max-width:700px; }
+  .step{ border-left:3px solid var(--brand); padding:2px 0 2px 22px; margin:0 0 24px; max-width:780px; }
+  .step .n{ color:var(--brand); font:600 12px/1 var(--font-mono); letter-spacing:0.12em; }
+  .step .t{ color:var(--fg-primary); font:600 15px/1.3 var(--font-mono); margin:7px 0 5px; }
+  .step .d{ color:var(--fg-secondary); font-size:14px; line-height:1.6; }
+  .doc-cta{ display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:var(--bg-base); font:600 14px/1 var(--font-mono); padding:13px 28px; margin-top:14px; text-decoration:none; }
+  .doc-cta:hover{ background:var(--brand-tint); }
+  .app-box.docbox{ width:1002px; max-width:100%; height:auto; }
+  .ab-body.docbody{ display:block; overflow:visible; flex:none; }
+  @media (max-width:1040px){
+    .mh{ padding:0 16px; }
+    .stage{ padding:16px; }
+    .app-box.docbox{ width:100% !important; height:auto !important; }
+    .ab-body.docbody{ overflow:visible !important; }
+    .docpane{ padding:22px 18px; }
+    .doc-h{ font-size:22px; }
+  }
+</style>
+</head>
+<body class="flex flex-col min-h-screen page-bg">
+
+<!-- HEADER -->
+<div class="mh">
+  <div class="mh-logo">
+    <a href="index.html" style="text-decoration:none;" title="RecruitCloud home"><div class="logo-type">
+      <span>recruitcloud</span>
+      <span style="display:inline-flex;align-items:center;margin-left:4px;"><span style="display:inline-block;width:9px;height:17px;background:var(--brand);"></span></span>
+    </div></a>
+  </div>
+  <nav class="mh-nav">
+    <a href="how-it-works.html" class="btn-text accent">how it works</a>
+    <a href="what-you-build.html" class="btn-text">what you build</a>
+    <a href="pricing.html" class="btn-text">pricing</a>
+    <a href="faq.html" class="btn-text">faq</a>
+  </nav>
+  <div class="mh-right">
+    <button class="mh-burger" id="mhBurger" aria-label="menu"><span></span><span></span><span></span></button>
+    <button class="btn-primary" onclick="window.location.href='https://calendly.com/isaacmarks/isaac-general'">book a build session<span class="btn-icon" style="-webkit-mask-image:url('assets/icons/chevron-right.svg');mask-image:url('assets/icons/chevron-right.svg')"></span></button>
+  </div>
+</div>
+<div class="mh-mpanel" id="mhMPanel">
+  <nav class="mh-mpanel-nav">
+    <a class="mh-mlink" href="how-it-works.html">how it works</a>
+    <a class="mh-mlink" href="what-you-build.html">what you build</a>
+    <a class="mh-mlink" href="pricing.html">pricing</a>
+    <a class="mh-mlink" href="faq.html">faq</a>
+  </nav>
+  <button class="btn-primary mh-mpanel-cta" onclick="window.location.href='https://calendly.com/isaacmarks/isaac-general'">book a build session</button>
+</div>
+
+<!-- CONSOLE -->
+<div class="stage">
+  <div class="app-box docbox">
+    <span class="cm tl"></span><span class="cm tr"></span><span class="cm bl"></span><span class="cm br"></span>
+    <div class="ab-top">
+      <div class="traffic"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+      <span class="ab-title">RecruitCloud Console — how it works</span>
+    </div>
+    <div class="ab-body docbody">
+      <div class="docpane">
+        <div class="doc-eyebrow">// the build, step by step</div>
+        <h1 class="doc-h">How we build your AI sourcing system</h1>
+        <p class="doc-sub">You don't get a tool or a stack of shortlists. You get a working system your team owns — sourcing agents, a data layer, and candidate sequencers, wired into your stack and yours to keep. Here's how the build runs.</p>
+
+        <div class="step"><div class="n">STEP 01 — MAP</div><div class="t">Audit roles, stack &amp; vendor spend</div><div class="d">We map the roles you're filling, the tools you already pay for, and what your agencies/RPO cost you today. The output is a blueprint for the exact system you need — not a generic platform.</div></div>
+
+        <div class="step"><div class="n">STEP 02 — SOURCING AGENTS</div><div class="t">Build agents that find off-market talent</div><div class="d">We build sourcing agents that surface signal-matched, off-market candidates for your roles — running continuously, not as a one-off pull. Targeting first; the bottleneck was never finding people, it was finding the <em>right</em> people.</div></div>
+
+        <div class="step"><div class="n">STEP 03 — DATA LAYER</div><div class="t">Wire intent signals into your own store</div><div class="d">Tenure, promotions, team changes, and other intent signals flow into a data layer <span style="color:var(--success);">you own</span> — never a vendor's black box, never training someone else's AI to replace you.</div></div>
+
+        <div class="step"><div class="n">STEP 04 — SEQUENCERS</div><div class="t">Build sequencers that actually get replies</div><div class="d">Personalized, multi-channel sequences (email · LinkedIn · SMS), 4–7 touches over 2–3 weeks. 82% of replies come from follow-ups and personalized outreach replies at ~18% vs ~6% for templates — so we build for that, not spray-and-pray.</div></div>
+
+        <div class="step"><div class="n">STEP 05 — INTEGRATE &amp; TRAIN</div><div class="t">Wire it into your stack, train your team</div><div class="d">The system plugs into your ATS as system-of-record and your recruiters learn to run and extend it. The capability lives inside your team — not inside a retainer.</div></div>
+
+        <div class="step"><div class="n">STEP 06 — OWN &amp; IMPROVE</div><div class="t">You keep it. It compounds.</div><div class="d">Every role you run makes the system smarter. We iterate monthly, but there's no lock-in: the agents, sequences, and data are yours. Stop working with us and you keep all of it.</div></div>
+
+        <a class="doc-cta" href="https://calendly.com/isaacmarks/isaac-general">book a build session →</a>
+      </div>
+    </div>
+    <div class="ab-prompt"><div class="prompt-line"><span class="p">recruitcloud-$</span><span class="caret"></span><input class="pinp" placeholder="# ask me anything about the build" autocomplete="off" spellcheck="false"></div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="mf">
+  <a href="how-it-works.html">How it works</a>
+  <a href="what-you-build.html">What you build</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="faq.html">FAQ</a>
+  <a href="https://www.linkedin.com/in/isaacmarks68/" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="mailto:info@recruitcloud.io">info@recruitcloud.io</a>
+</div>
+
+<script>
+(function(){
+  function rand(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+  function delay(ms){return new Promise(r=>setTimeout(r,ms));}
+  const burger=document.getElementById('mhBurger'), panel=document.getElementById('mhMPanel');
+  if(!burger||!panel) return;
+  const links=Array.prototype.slice.call(panel.querySelectorAll('.mh-mlink'));
+  let open=false,closeTimer=null;
+  function openMenu(){ if(open)return; open=true; clearTimeout(closeTimer); burger.classList.add('open'); panel.classList.remove('closing'); panel.classList.add('open'); links.forEach(l=>l.classList.remove('shown')); (async()=>{for(const l of links){await delay(rand(45,85)); if(!open)return; l.classList.add('shown');}})(); }
+  function closeMenu(){ if(!open)return; open=false; burger.classList.remove('open'); panel.classList.add('closing'); closeTimer=setTimeout(()=>{panel.classList.remove('open','closing'); links.forEach(l=>l.classList.remove('shown'));},140); }
+  burger.addEventListener('click',()=>open?closeMenu():openMenu());
+})();
+</script>
+</body>
+</html>

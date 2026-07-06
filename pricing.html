@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing — RecruitCloud</title>
+<meta name="description" content="RecruitCloud pricing: a fixed-scope Build Sprint to stand up your first sourcing system, or an ongoing System Partner engagement. One system replaces the agency retainer.">
+<meta name="theme-color" content="#7d9efd">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RecruitCloud">
+<meta property="og:title" content="Pricing — RecruitCloud">
+<meta property="og:description" content="RecruitCloud pricing: a fixed-scope Build Sprint to stand up your first sourcing system, or an ongoing System Partner engagement. One system replaces the agency retainer.">
+<meta property="og:image" content="https://recruitcloud.io/assets/og-banner.png">
+<link rel="preload" href="fonts/SF-Mono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/tailwind.css">
+<script defer src="moltsets-tailwind.js"></script>
+<link rel="stylesheet" href="moltsets-base.css">
+<link rel="stylesheet" href="theme-navy.css">
+<style>
+  .docpane{ background:var(--bg-terminal); padding:34px 40px; overflow-y:auto; color:var(--fg-secondary); font-size:14px; }
+  .doc-eyebrow{ color:var(--fg-muted); font:400 12px/1 var(--font-mono); letter-spacing:0.14em; text-transform:uppercase; margin:0 0 12px; }
+  .doc-h{ font:600 26px/1.15 var(--font-mono); color:var(--fg-primary); letter-spacing:-0.02em; margin:0 0 10px; }
+  .doc-sub{ color:var(--fg-secondary); font-size:15px; line-height:1.6; margin:0 0 18px; max-width:720px; }
+  .baseline{ border-left:3px solid var(--brand); padding:12px 0 12px 20px; margin:0 0 28px; max-width:760px; color:var(--fg-muted); font-size:13.5px; line-height:1.6; }
+  .baseline b{ color:var(--fg-secondary); }
+  .tiers{ display:grid; grid-template-columns:1fr 1fr; gap:14px; max-width:860px; }
+  .tier{ border:1px dashed var(--brand); padding:24px 24px 26px; display:flex; flex-direction:column; }
+  .tier.feat{ border-style:solid; background:rgba(125,158,253,0.06); }
+  .tier .nm{ color:var(--fg-primary); font:600 16px/1 var(--font-mono); }
+  .tier .badge{ display:inline-block; background:var(--brand); color:var(--bg-base); font:600 10px/1 var(--font-mono); letter-spacing:0.1em; padding:5px 9px; margin-bottom:12px; }
+  .tier .price{ color:var(--fg-primary); font:600 22px/1.1 var(--font-mono); margin:14px 0 4px; letter-spacing:-0.02em; }
+  .tier .price small{ color:var(--fg-muted); font-size:13px; font-weight:400; }
+  .tier ul{ list-style:none; margin:14px 0 0; padding:0; flex:1; }
+  .tier li{ color:var(--fg-secondary); font-size:13.5px; line-height:1.5; padding:6px 0 6px 20px; position:relative; }
+  .tier li::before{ content:"✓"; color:var(--success); position:absolute; left:0; }
+  .tier .cta{ display:inline-flex; justify-content:center; align-items:center; gap:7px; margin-top:20px; font:600 14px/1 var(--font-mono); padding:12px 20px; text-decoration:none; }
+  .tier .cta.solid{ background:var(--brand); color:var(--bg-base); }
+  .tier .cta.ghost{ border:1px solid var(--divider); color:var(--fg-primary); }
+  .note{ color:var(--fg-muted); font-size:12.5px; line-height:1.6; margin-top:22px; max-width:760px; }
+  .app-box.docbox{ width:1002px; max-width:100%; height:auto; }
+  .ab-body.docbody{ display:block; overflow:visible; flex:none; }
+  @media (max-width:1040px){
+    .mh{ padding:0 16px; } .stage{ padding:16px; }
+    .app-box.docbox{ width:100% !important; height:auto !important; }
+    .ab-body.docbody{ overflow:visible !important; }
+    .docpane{ padding:22px 18px; } .doc-h{ font-size:22px; } .tiers{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body class="flex flex-col min-h-screen page-bg">
+
+<!-- HEADER -->
+<div class="mh">
+  <div class="mh-logo">
+    <a href="index.html" style="text-decoration:none;" title="RecruitCloud home"><div class="logo-type">
+      <span>recruitcloud</span>
+      <span style="display:inline-flex;align-items:center;margin-left:4px;"><span style="display:inline-block;width:9px;height:17px;background:var(--brand);"></span></span>
+    </div></a>
+  </div>
+  <nav class="mh-nav">
+    <a href="how-it-works.html" class="btn-text">how it works</a>
+    <a href="what-you-build.html" class="btn-text">what you build</a>
+    <a href="pricing.html" class="btn-text accent">pricing</a>
+    <a href="faq.html" class="btn-text">faq</a>
+  </nav>
+  <div class="mh-right">
+    <button class="mh-burger" id="mhBurger" aria-label="menu"><span></span><span></span><span></span></button>
+    <button class="btn-primary" onclick="window.location.href='https://calendly.com/isaacmarks/isaac-general'">book a build session<span class="btn-icon" style="-webkit-mask-image:url('assets/icons/chevron-right.svg');mask-image:url('assets/icons/chevron-right.svg')"></span></button>
+  </div>
+</div>
+<div class="mh-mpanel" id="mhMPanel">
+  <nav class="mh-mpanel-nav">
+    <a class="mh-mlink" href="how-it-works.html">how it works</a>
+    <a class="mh-mlink" href="what-you-build.html">what you build</a>
+    <a class="mh-mlink" href="pricing.html">pricing</a>
+    <a class="mh-mlink" href="faq.html">faq</a>
+  </nav>
+  <button class="btn-primary mh-mpanel-cta" onclick="window.location.href='https://calendly.com/isaacmarks/isaac-general'">book a build session</button>
+</div>
+
+<!-- CONSOLE -->
+<div class="stage">
+  <div class="app-box docbox">
+    <span class="cm tl"></span><span class="cm tr"></span><span class="cm bl"></span><span class="cm br"></span>
+    <div class="ab-top">
+      <div class="traffic"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+      <span class="ab-title">RecruitCloud Console — pricing</span>
+    </div>
+    <div class="ab-body docbody">
+      <div class="docpane">
+        <div class="doc-eyebrow">// one system replaces the retainer</div>
+        <h1 class="doc-h">Pricing</h1>
+        <p class="doc-sub">You're not paying per shortlist. You're paying once to build a system you keep — then run at internal cost instead of agency rates.</p>
+        <div class="baseline">For reference, the spend this replaces: an agency placement runs <b>$15,000–$35,000</b> per hire (SHRM); RPO runs <b>~$200k–$500k for 50 hires a year</b>. Internal cost-per-hire averages <b>~$4,700</b>. The system you own moves you toward the bottom of that range — and you stop paying the markup every time.</div>
+
+        <div class="tiers">
+          <div class="tier">
+            <div class="nm">Build Sprint</div>
+            <div class="price">Fixed scope <small>/ one role family</small></div>
+            <ul>
+              <li>Stand up your first sourcing system end-to-end</li>
+              <li>Sourcing agent + personalized sequencer, live</li>
+              <li>Intent-signal data layer in a store you own</li>
+              <li>Wired into your ATS; your team trained to run it</li>
+              <li>You own everything it produces</li>
+            </ul>
+            <a class="cta ghost" href="https://calendly.com/isaacmarks/isaac-general">Scope a sprint →</a>
+          </div>
+          <div class="tier feat">
+            <div class="badge">MOST TEAMS START HERE</div>
+            <div class="nm">System Partner</div>
+            <div class="price">Ongoing build-out <small>/ multi-role</small></div>
+            <ul>
+              <li>Everything in Build Sprint, across role families</li>
+              <li>Monthly iteration — the system compounds</li>
+              <li>New agents &amp; sequences as your hiring shifts</li>
+              <li>Live pipeline &amp; dashboard, owned by you</li>
+              <li>No lock-in — keep all of it if we part ways</li>
+            </ul>
+            <a class="cta solid" href="https://calendly.com/isaacmarks/isaac-general">Book a build session →</a>
+          </div>
+        </div>
+
+        <p class="note">// Pricing is scoped to your role volume and the system you need — book a build session and we'll size it against what you spend on vendors today. The goal is simple: your owned system should cost less than the agency invoices it replaces.</p>
+      </div>
+    </div>
+    <div class="ab-prompt"><div class="prompt-line"><span class="p">recruitcloud-$</span><span class="caret"></span><input class="pinp" placeholder="# ask me how pricing is scoped" autocomplete="off" spellcheck="false"></div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="mf">
+  <a href="how-it-works.html">How it works</a>
+  <a href="what-you-build.html">What you build</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="faq.html">FAQ</a>
+  <a href="https://www.linkedin.com/in/isaacmarks68/" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="mailto:info@recruitcloud.io">info@recruitcloud.io</a>
+</div>
+
+<script>
+(function(){
+  function rand(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+  function delay(ms){return new Promise(r=>setTimeout(r,ms));}
+  const burger=document.getElementById('mhBurger'), panel=document.getElementById('mhMPanel');
+  if(!burger||!panel) return;
+  const links=Array.prototype.slice.call(panel.querySelectorAll('.mh-mlink'));
+  let open=false,closeTimer=null;
+  function openMenu(){ if(open)return; open=true; clearTimeout(closeTimer); burger.classList.add('open'); panel.classList.remove('closing'); panel.classList.add('open'); links.forEach(l=>l.classList.remove('shown')); (async()=>{for(const l of links){await delay(rand(45,85)); if(!open)return; l.classList.add('shown');}})(); }
+  function closeMenu(){ if(!open)return; open=false; burger.classList.remove('open'); panel.classList.add('closing'); closeTimer=setTimeout(()=>{panel.classList.remove('open','closing'); links.forEach(l=>l.classList.remove('shown'));},140); }
+  burger.addEventListener('click',()=>open?closeMenu():openMenu());
+})();
+</script>
+</body>
+</html>

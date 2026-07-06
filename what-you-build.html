@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What you build &amp; own — RecruitCloud</title>
+<meta name="description" content="The components of your AI sourcing system — sourcing agents, engagement sequencers, an intent-signal data layer, a live pipeline, and the operating system that makes them produce ROI. All owned by you.">
+<meta name="theme-color" content="#7d9efd">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RecruitCloud">
+<meta property="og:title" content="What you build &amp; own — RecruitCloud">
+<meta property="og:description" content="The components of your AI sourcing system — sourcing agents, engagement sequencers, an intent-signal data layer, a live pipeline, and the operating system that makes them produce ROI. All owned by you.">
+<meta property="og:image" content="https://recruitcloud.io/assets/og-banner.png">
+<link rel="preload" href="fonts/SF-Mono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/tailwind.css">
+<script defer src="moltsets-tailwind.js"></script>
+<link rel="stylesheet" href="moltsets-base.css">
+<link rel="stylesheet" href="theme-navy.css">
+<style>
+  .docpane{ background:var(--bg-terminal); padding:34px 40px; overflow-y:auto; color:var(--fg-secondary); font-size:14px; }
+  .doc-eyebrow{ color:var(--fg-muted); font:400 12px/1 var(--font-mono); letter-spacing:0.14em; text-transform:uppercase; margin:0 0 12px; }
+  .doc-h{ font:600 26px/1.15 var(--font-mono); color:var(--fg-primary); letter-spacing:-0.02em; margin:0 0 10px; }
+  .doc-sub{ color:var(--fg-secondary); font-size:15px; line-height:1.6; margin:0 0 30px; max-width:720px; }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:14px; max-width:860px; }
+  .card{ border:1px dashed var(--brand); padding:20px 22px; background:rgba(125,158,253,0.04); }
+  .card .tag{ color:var(--brand); font:600 11px/1 var(--font-mono); letter-spacing:0.12em; }
+  .card .t{ color:var(--fg-primary); font:600 15px/1.3 var(--font-mono); margin:8px 0 6px; }
+  .card .d{ color:var(--fg-secondary); font-size:13.5px; line-height:1.55; }
+  .own{ border-left:3px solid var(--success); padding:14px 0 14px 22px; margin:28px 0 8px; max-width:820px; }
+  .own .t{ color:var(--success); font:600 15px/1.3 var(--font-mono); }
+  .own .d{ color:var(--fg-secondary); font-size:14px; line-height:1.6; margin-top:6px; }
+  .doc-cta{ display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:var(--bg-base); font:600 14px/1 var(--font-mono); padding:13px 28px; margin-top:22px; text-decoration:none; }
+  .doc-cta:hover{ background:var(--brand-tint); }
+  .app-box.docbox{ width:1002px; max-width:100%; height:auto; }
+  .ab-body.docbody{ display:block; overflow:visible; flex:none; }
+  @media (max-width:1040px){
+    .mh{ padding:0 16px; } .stage{ padding:16px; }
+    .app-box.docbox{ width:100% !important; height:auto !important; }
+    .ab-body.docbody{ overflow:visible !important; }
+    .docpane{ padding:22px 18px; } .doc-h{ font-size:22px; } .grid2{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body class="flex flex-col min-h-screen page-bg">
+
+<!-- HEADER -->
+<div class="mh">
+  <div class="mh-logo">
+    <a href="index.html" style="text-decoration:none;" title="RecruitCloud home"><div class="logo-type">
+      <span>recruitcloud</span>
+      <span style="display:inline-flex;align-items:center;margin-left:4px;"><span style="display:inline-block;width:9px;height:17px;background:var(--brand);"></span></span>
+    </div></a>
+  </div>
+  <nav class="mh-nav">
+    <a href="how-it-works.html" class="btn-text">how it works</a>
+    <a href="what-you-build.html" class="btn-text accent">what you build</a>
+    <a href="pricing.html" class="btn-text">pricing</a>
+    <a href="faq.html" class="btn-text">faq</a>
+  </nav>
+  <div class="mh-right">
+    <button class="mh-burger" id="mhBurger" aria-label="menu"><span></span><span></span><span></span></button>
+    <button class="btn-primary" onclick="window.location.href='https://calendly.com/isaacmarks/isaac-general'">book a build session<span class="btn-icon" style="-webkit-mask-image:url('assets/icons/chevron-right.svg');mask-image:url('assets/icons/chevron-right.svg')"></span></button>
+  </div>
+</div>
+<div class="mh-mpanel" id="mhMPanel">
+  <nav class="mh-mpanel-nav">
+    <a class="mh-mlink" href="how-it-works.html">how it works</a>
+    <a class="mh-mlink" href="what-you-build.html">what you build</a>
+    <a class="mh-mlink" href="pricing.html">pricing</a>
+    <a class="mh-mlink" href="faq.html">faq</a>
+  </nav>
+  <button class="btn-primary mh-mpanel-cta" onclick="window.location.href='https://calendly.com/isaacmarks/isaac-general'">book a build session</button>
+</div>
+
+<!-- CONSOLE -->
+<div class="stage">
+  <div class="app-box docbox">
+    <span class="cm tl"></span><span class="cm tr"></span><span class="cm bl"></span><span class="cm br"></span>
+    <div class="ab-top">
+      <div class="traffic"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+      <span class="ab-title">RecruitCloud Console — what you build &amp; own</span>
+    </div>
+    <div class="ab-body docbody">
+      <div class="docpane">
+        <div class="doc-eyebrow">// your system, component by component</div>
+        <h1 class="doc-h">What you build &amp; own</h1>
+        <p class="doc-sub">Every part of the system is an asset that stays with you. Not a login you rent — a machine your team runs, extends, and keeps. Talent teams don't need more AI-themed karaoke machines. They need real infrastructure. Here's what's in it.</p>
+
+        <div class="grid2">
+          <div class="card"><div class="tag">AGENTS</div><div class="t">Sourcing agents</div><div class="d">Continuously surface off-market, signal-matched candidates for your roles. The pull never stops and never leaves with a vendor.</div></div>
+          <div class="card"><div class="tag">ENGAGEMENT</div><div class="t">Candidate sequencers</div><div class="d">Personalized, multi-channel sequences (email · LinkedIn · SMS), built around follow-ups — where 82% of replies actually come from.</div></div>
+          <div class="card"><div class="tag">DATA</div><div class="t">Intent-signal data layer</div><div class="d">Tenure, promotions, team changes and more, in a store you own. Your data never trains someone else's AI to replace you.</div></div>
+          <div class="card"><div class="tag">PIPELINE</div><div class="t">Live sourcing pipeline &amp; dashboard</div><div class="d">Full visibility into every candidate, signal, and message sent — the reporting layer stays yours, not the vendor's.</div></div>
+          <div class="card"><div class="tag">OPERATING SYSTEM</div><div class="t">The workflows that make it work</div><div class="d">The prompts, playbooks, and workflow design that turn tools into ROI. This is the part teams stall on alone — and the part we build with you.</div></div>
+          <div class="card"><div class="tag">YOUR TEAM</div><div class="t">The capability, in-house</div><div class="d">Your recruiters learn to run and extend the system. The skill lives inside your team instead of inside a retainer.</div></div>
+        </div>
+
+        <div class="own">
+          <div class="t">// open by design</div>
+          <div class="d">Open APIs. Open architecture. Natural-language workflows. Multi-agent systems. Real portability. Real control. That's the spec for everything we build with you — no black box, nothing trapped inside someone else's platform.</div>
+        </div>
+
+        <div class="own">
+          <div class="t">// the ownership contract</div>
+          <div class="d">If we ever part ways, you keep all of it — the agents, the sequences, the data, the dashboard, the playbooks. That's the entire point. An agency rents you effort and walks off with the relationship and the data. We build you the capability and leave you the asset.</div>
+        </div>
+
+        <div class="own">
+          <div class="t">recruitcloud-$ cat don-the-donkey.txt</div>
+          <pre style="margin:12px 0 0;font:400 13px/1.45 var(--font-mono);color:var(--fg-muted);overflow-x:auto;">  |\__    __/|
+  |   \__/   |
+  /  o    o  \      don rents his carrot on a stick.
+ (     __     )     he chases it. he never catches it.
+  \   (__)   /      he keeps paying for the chase.
+   \________/</pre>
+          <div class="d" style="margin-top:10px;color:var(--fg-accent);">don't be don — own the system.</div>
+        </div>
+
+        <a class="doc-cta" href="https://calendly.com/isaacmarks/isaac-general">book a build session →</a>
+      </div>
+    </div>
+    <div class="ab-prompt"><div class="prompt-line"><span class="p">recruitcloud-$</span><span class="caret"></span><input class="pinp" placeholder="# ask me what you'd own" autocomplete="off" spellcheck="false"></div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="mf">
+  <a href="how-it-works.html">How it works</a>
+  <a href="what-you-build.html">What you build</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="faq.html">FAQ</a>
+  <a href="https://www.linkedin.com/in/isaacmarks68/" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="mailto:info@recruitcloud.io">info@recruitcloud.io</a>
+</div>
+
+<script>
+(function(){
+  function rand(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+  function delay(ms){return new Promise(r=>setTimeout(r,ms));}
+  const burger=document.getElementById('mhBurger'), panel=document.getElementById('mhMPanel');
+  if(!burger||!panel) return;
+  const links=Array.prototype.slice.call(panel.querySelectorAll('.mh-mlink'));
+  let open=false,closeTimer=null;
+  function openMenu(){ if(open)return; open=true; clearTimeout(closeTimer); burger.classList.add('open'); panel.classList.remove('closing'); panel.classList.add('open'); links.forEach(l=>l.classList.remove('shown')); (async()=>{for(const l of links){await delay(rand(45,85)); if(!open)return; l.classList.add('shown');}})(); }
+  function closeMenu(){ if(!open)return; open=false; burger.classList.remove('open'); panel.classList.add('closing'); closeTimer=setTimeout(()=>{panel.classList.remove('open','closing'); links.forEach(l=>l.classList.remove('shown'));},140); }
+  burger.addEventListener('click',()=>open?closeMenu():openMenu());
+})();
+</script>
+</body>
+</html>
