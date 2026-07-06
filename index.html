@@ -156,16 +156,17 @@
           <h2 class="helpp-featttl text-sm" style="margin:0;">recruitcloud-$ whoami</h2>
           <div class="cb text-sm font-bold"><i class="icon icon-on"></i>Isaac Marks &ndash; founder</div>
           <div class="cb text-sm"><i class="icon icon-on"></i>20+ years in recruiting; founded &amp; exited a staffing firm</div>
-          <div class="cb text-sm"><i class="icon icon-on"></i>Builds these sourcing systems in public</div>
+          <div class="cb text-sm"><i class="icon icon-on"></i>Builds custom systems fit to your culture &ndash; learning from past hires to close open roles fast</div>
           <a class="cb text-sm font-bold" href="https://www.linkedin.com/in/isaacmarks68" target="_blank" rel="noopener" style="color:var(--brand);text-decoration:none;">linkedin.com/in/isaacmarks68 &rarr;</a>
         </div>
       </div>
     </div>
     <div class="ab-prompt" id="abPrompt">
-      <div class="prompt-line">
+      <div class="prompt-line" id="promptLine" style="cursor:text;">
         <span class="p">recruitcloud-$</span>
+        <span id="chyron" style="color:var(--fg-secondary);white-space:nowrap;overflow:hidden;"></span>
         <span class="caret" id="promptCursor"></span>
-        <input class="pinp" id="promptInput" placeholder="# ask me anything about building your sourcing system" autocomplete="off" spellcheck="false">
+        <input class="pinp" id="promptInput" placeholder="the candidate you're looking for + location" autocomplete="off" spellcheck="false" style="display:none;">
       </div>
     </div>
   </div>
@@ -280,7 +281,7 @@ function screenHome(pane){
   await delay(280);
   document.getElementById('abBody').style.opacity = '1';
   document.getElementById('abPrompt').style.display = 'block';
-  document.getElementById('promptInput').focus({preventScroll:true});
+  if(window.__startChyron) window.__startChyron();
   await delay(120);
   const pane = document.getElementById('chatPane');
   const think = showThinking(pane, document.getElementById('heroBlock'));
@@ -341,6 +342,53 @@ function placeHelpPanel(){
   const fcta=document.querySelector('.floating-cta'); if(!fcta) return;
   let t;
   fcta.addEventListener('click',function(e){ if(!fcta.classList.contains('expanded')){ fcta.classList.add('expanded'); t=setTimeout(()=>fcta.classList.remove('expanded'),3000); } });
+})();
+</script>
+<script>
+(function(){
+  const chy = document.getElementById('chyron');
+  const caret = document.getElementById('promptCursor');
+  const line = document.getElementById('promptLine');
+  const input = document.getElementById('promptInput');
+  if(!chy || !line || !input) return;
+  const PHRASES = [
+    "# type the candidate you're looking for \u2014 we'll help you source them",
+    "a senior flutter developer in new york",
+    "a backend engineering manager in new jersey",
+    "an igaming risk & compliance manager in malta",
+    "a bilingual technical recruiter in bogot\u00e1",
+    "a sports-betting product owner in london"
+  ];
+  let pi = 0, stop = false;
+  const wait = ms => new Promise(r => setTimeout(r, ms));
+  async function loop(){
+    while(!stop){
+      const ph = PHRASES[pi % PHRASES.length]; pi++;
+      for(let i=1;i<=ph.length;i++){ if(stop) return; chy.textContent = ph.slice(0,i); await wait(38); }
+      await wait(1700);
+      for(let i=ph.length;i>=0;i--){ if(stop) return; chy.textContent = ph.slice(0,i); await wait(12); }
+      await wait(350);
+    }
+  }
+  window.__startChyron = function(){ stop = false; loop(); };
+  line.addEventListener('click', function(){
+    if(input.style.display !== 'none') return;
+    stop = true; chy.textContent = ''; chy.style.display = 'none'; caret.style.display = 'none';
+    input.style.display = ''; input.focus({preventScroll:true});
+  });
+  input.addEventListener('blur', function(){
+    if(input.value.trim()) return;
+    input.style.display = 'none'; chy.style.display = ''; caret.style.display = '';
+    window.__startChyron();
+  });
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' && input.value.trim()){
+      const q = input.value.trim();
+      window.location.href = 'mailto:info@recruitcloud.io?subject='
+        + encodeURIComponent('Candidate sourcing request')
+        + '&body=' + encodeURIComponent("I'm looking for: " + q + "\n\nName:\nCompany:\nBest phone/email:");
+    }
+  });
 })();
 </script>
 </body>
