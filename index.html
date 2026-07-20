@@ -117,7 +117,7 @@
           <div class="hero-headlines" id="heroHeadlines">
             <h1 class="hero-headline anim-hide" id="hh0" style="font-size:22px;">Build your own AI sourcing system &mdash; stop renting your pipeline.</h1>
             <div style="display:flex;flex-direction:column;gap:4px;margin-top:8px;">
-              <div class="text-body font-normal anim-hide" id="hh1a" style="color:var(--fg-secondary);">We help internal recruiting teams build their own AI sourcing system: agents that find candidates, sequencers that engage them, and a pipeline you own &mdash; so you fill roles in-house and cut vendor spend.</div>
+              <div class="text-body font-normal anim-hide" id="hh1a" style="color:var(--fg-secondary);">Agents that find candidates, sequencers that engage them, and a pipeline you own &mdash; built for internal recruiting teams.</div>
             </div>
           </div>
         </div>
@@ -147,12 +147,6 @@
         <div class="helpp-item reveal"><span class="helpp-chev"></span><span class="helpp-cmd" style="color:var(--fg-secondary);">a live sourcing pipeline</span><span class="helpp-desc" style="color:var(--fg-secondary);">(yours to keep)</span></div>
         <div class="helpp-item reveal"><span class="helpp-chev"></span><span class="helpp-cmd" style="color:var(--fg-secondary);">a system you improve forever</span><span class="helpp-desc" style="color:var(--fg-secondary);">(no lock-in)</span></div>
         <div class="helpp-feat reveal" style="gap:11px;">
-          <h2 class="helpp-featttl text-sm" style="margin:0;">Why teams build with RecruitCloud</h2>
-          <div class="cb text-sm font-bold"><i class="icon icon-on"></i>Own your stack &ndash; stop renting SaaS</div>
-          <div class="cb text-sm font-bold"><i class="icon icon-on"></i>Cut vendor &amp; agency spend</div>
-          <div class="cb text-sm font-bold"><i class="icon icon-on"></i>Built by an ex-staffing founder</div>
-        </div>
-        <div class="helpp-feat reveal" style="gap:11px;margin-top:12px;">
           <h2 class="helpp-featttl text-sm" style="margin:0;">recruitcloud-$ whoami</h2>
           <div class="cb text-sm font-bold"><i class="icon icon-on"></i>Isaac Marks &ndash; founder</div>
           <div class="cb text-sm"><i class="icon icon-on"></i>20+ years in recruiting; founded &amp; exited a staffing firm</div>
@@ -171,14 +165,11 @@
     </div>
   </div>
 
-  <div class="stage-hint" id="stageHint">
-    <button class="stage-hint-cta" onclick="window.location.href='https://calendly.com/isaacmarks/ros-assesment'">book a build session<span class="stage-hint-cta-icon"></span></button>
-  </div>
 </div>
 
 <!-- ── FLOATING CTA ── -->
 <button class="floating-cta" onclick="window.location.href='mailto:isaac@recruitcloud.io?subject=Question%20for%20RecruitCloud'">
-  <span class="floating-label">recruitcloud.ai — ask us anything</span>
+  <span class="floating-label">recruitcloud.io — ask us anything</span>
   <span class="btn-icon" style="width:14px;height:14px;background:var(--bg-base);-webkit-mask-image:url('assets/icons/robot-sharp.svg');mask-image:url('assets/icons/robot-sharp.svg')"></span>
 </button>
 
@@ -288,8 +279,6 @@ function screenHome(pane){
   await delay(rand(700,1000));
   think.remove();
   screenHome(pane);
-  await delay(2000);
-  document.getElementById('stageHint').classList.add('shown');
 })();
 
 function placeHelpPanel(){
