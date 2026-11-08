@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /email-assets/
+Sitemap: https://recruitcloud.io/sitemap.xml
