@@ -1,7 +1,7 @@
 // Preserve campaign attribution through site navigation and completed Calendly bookings.
 (function () {
   'use strict';
-  var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'oppref'];
   var page = new URL(window.location.href);
   var attribution = new URLSearchParams();
   if (navigator.globalPrivacyControl) return;
@@ -31,7 +31,7 @@
   });
   document.querySelectorAll('button[onclick]').forEach(function (button) {
     var handler = button.getAttribute('onclick');
-    var match = handler.match(/^window\.location\.href=['"](https:\/\/calendly\.com\/isaacmarks\/ros-assesment)['"]$/);
+    var match = handler.match(/^window\.location\.href=['"](\/book\.html)['"]$/);
     if (!match) return;
     var destination = attributedUrl(match[1]);
     button.removeAttribute('onclick');
