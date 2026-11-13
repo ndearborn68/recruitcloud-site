@@ -1,4 +1,4 @@
-// Preserve campaign attribution through site navigation and completed Calendly bookings.
+// Preserve campaign attribution through site navigation and navigation to the booking page.
 (function () {
   'use strict';
   var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'oppref'];
