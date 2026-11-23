@@ -6,15 +6,23 @@
 <script>document.documentElement.classList.add('js')</script>
 
 <title>RecruitCloud — Build your own AI sourcing system</title>
-<meta name="description" content="We help internal recruiting teams build their own AI sourcing system — agents that find candidates, sequencers that engage them, and a pipeline you own. Fill roles in-house, cut vendor spend, own your stack.">
+<meta name="description" content="We help internal recruiting teams build an AI sourcing system: agents, sequencers, and a pipeline you own. Fill roles in-house and cut vendor spend.">
 <meta name="theme-color" content="#7d9efd">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="canonical" href="https://recruitcloud.io/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="RecruitCloud">
 <meta property="og:title" content="RecruitCloud — Build your own AI sourcing system">
-<meta property="og:description" content="We help internal recruiting teams build their own AI sourcing system — agents that find candidates, sequencers that engage them, and a pipeline you own. Fill roles in-house, cut vendor spend, own your stack.">
-<meta property="og:image" content="https://recruitcloud.io/assets/og-banner.png">
+<meta property="og:description" content="We help internal recruiting teams build an AI sourcing system: agents, sequencers, and a pipeline you own. Fill roles in-house and cut vendor spend.">
+<meta property="og:url" content="https://recruitcloud.io/">
+<meta property="og:image" content="https://recruitcloud.io/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RecruitCloud — Build your own AI sourcing system">
+<meta name="twitter:description" content="We help internal recruiting teams build an AI sourcing system: agents, sequencers, and a pipeline you own. Fill roles in-house and cut vendor spend.">
+<meta name="twitter:image" content="https://recruitcloud.io/assets/og-card.png">
 
 <link rel="preload" href="fonts/SF-Mono-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/SF-Mono-Bold.woff2" as="font" type="font/woff2" crossorigin>
@@ -64,13 +72,41 @@
   html:not(.js) .stage-hint   { opacity:1; }
 </style>
 <script defer src="/assets/posthog.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "RecruitCloud",
+  "legalName": "RecruitCloud LLC",
+  "url": "https://recruitcloud.io/",
+  "logo": "https://recruitcloud.io/assets/apple-touch-icon.png",
+  "image": "https://recruitcloud.io/assets/og-card.png",
+  "email": "isaac@recruitcloud.io",
+  "description": "RecruitCloud helps internal recruiting teams build their own AI sourcing system: agents, sequencers, and a pipeline they own.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Miami Beach",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Isaac Marks",
+    "url": "https://www.linkedin.com/in/isaacmarks68"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/isaacmarks68",
+    "https://www.linkedin.com/company/recruitcloud"
+  ]
+}
+</script>
 </head>
 <body class="flex flex-col min-h-screen page-bg">
 
 <!-- ── HEADER ── -->
 <div class="mh">
   <div class="mh-logo">
-    <a href="index.html" style="text-decoration:none;" title="RecruitCloud home"><div class="logo-type">
+    <a href="/" style="text-decoration:none;" title="RecruitCloud home"><div class="logo-type">
       <span id="logoTyped"></span>
       <span style="display:inline-flex;align-items:center;margin-left:4px;">
         <span style="display:inline-block;width:9px;height:17px;background:var(--brand);"></span>
@@ -85,7 +121,7 @@
   </nav>
   <div class="mh-right">
     <button class="mh-burger" id="mhBurger" aria-label="menu"><span></span><span></span><span></span></button>
-    <button class="btn-primary" onclick="window.location.href='/book.html'">book a build session<span class="btn-icon" style="-webkit-mask-image:url('assets/icons/chevron-right.svg');mask-image:url('assets/icons/chevron-right.svg')"></span></button>
+    <a class="btn-primary" href="/book.html">book a build session<span class="btn-icon" style="-webkit-mask-image:url('/assets/icons/chevron-right.svg');mask-image:url('/assets/icons/chevron-right.svg')"></span></a>
   </div>
 </div>
 <div class="mh-mpanel" id="mhMPanel">
@@ -94,8 +130,9 @@
     <a class="mh-mlink" href="what-you-build.html">what you build</a>
     <a class="mh-mlink" href="pricing.html">pricing</a>
     <a class="mh-mlink" href="faq.html">faq</a>
+    <a class="mh-mlink" href="/blog/">blog</a>
   </nav>
-  <button class="btn-primary mh-mpanel-cta" onclick="window.location.href='/book.html'">book a build session<span class="btn-icon" style="-webkit-mask-image:url('assets/icons/chevron-right.svg');mask-image:url('assets/icons/chevron-right.svg')"></span></button>
+  <a class="btn-primary mh-mpanel-cta" href="/book.html">book a build session<span class="btn-icon" style="-webkit-mask-image:url('/assets/icons/chevron-right.svg');mask-image:url('/assets/icons/chevron-right.svg')"></span></a>
 </div>
 
 
@@ -173,7 +210,7 @@
   </div>
 
   <div class="stage-hint" id="stageHint">
-    <button class="stage-hint-cta" onclick="window.location.href='/book.html'">book a build session<span class="stage-hint-cta-icon"></span></button>
+    <a class="stage-hint-cta" href="/book.html">book a build session<span class="stage-hint-cta-icon"></span></a>
   </div>
 </div>
 
