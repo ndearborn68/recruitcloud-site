@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Cut Agency and RPO Spend In-House — RecruitCloud</title>
+<meta name="description" content="Agency placements and RPO retainers add up every hire. Here's how internal TA teams cut that spend by building a sourcing system they own.">
+<meta name="theme-color" content="#7d9efd">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="canonical" href="https://recruitcloud.io/blog/cut-agency-spend-in-house-sourcing">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="RecruitCloud">
+<meta property="og:title" content="How to Cut Agency and RPO Spend In-House">
+<meta property="og:description" content="Agency placements and RPO retainers add up every hire. Here's how internal TA teams cut that spend by building a sourcing system they own.">
+<meta property="og:url" content="https://recruitcloud.io/blog/cut-agency-spend-in-house-sourcing">
+<meta property="og:image" content="https://recruitcloud.io/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Cut Agency and RPO Spend In-House">
+<meta name="twitter:description" content="Agency placements and RPO retainers add up every hire. Here's how internal TA teams cut that spend by building a sourcing system they own.">
+<meta name="twitter:image" content="https://recruitcloud.io/assets/og-card.png">
+<link rel="preload" href="/fonts/SF-Mono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/tailwind.css">
+<script defer src="/moltsets-tailwind.js"></script>
+<link rel="stylesheet" href="/moltsets-base.css">
+<link rel="stylesheet" href="/theme-navy.css">
+<style>
+  .docpane{ background:var(--bg-terminal); padding:34px 40px; overflow-y:auto; color:var(--fg-secondary); font-size:14px; line-height:1.7; }
+  .doc-eyebrow{ color:var(--fg-muted); font:400 12px/1 var(--font-mono); letter-spacing:0.14em; text-transform:uppercase; margin:0 0 12px; }
+  .doc-h{ font:600 26px/1.15 var(--font-mono); color:var(--fg-primary); letter-spacing:-0.02em; margin:28px 0 14px; }
+  .doc-h:first-child{ margin-top:0; }
+  .doc-h2{ font:600 20px/1.2 var(--font-mono); color:var(--fg-primary); margin:32px 0 12px; }
+  .doc-h3{ font:600 16px/1.3 var(--font-mono); color:var(--brand); margin:24px 0 10px; }
+  .docpane p{ margin:0 0 18px; max-width:820px; }
+  .docpane b{ color:var(--success); font-weight:600; }
+  .inline-link{ color:var(--brand); text-decoration:underline; }
+  .inline-link:hover{ color:var(--brand-tint); }
+  .doc-cta{ display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:var(--bg-base); font:600 14px/1 var(--font-mono); padding:13px 28px; margin-top:16px; text-decoration:none; }
+  .doc-cta:hover{ background:var(--brand-tint); }
+  .cta a{ display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:var(--bg-base); font:600 14px/1 var(--font-mono); padding:13px 28px; text-decoration:none; }
+  .cta a:hover{ background:var(--brand-tint); }
+  .app-box.docbox{ width:1002px; max-width:100%; height:auto; }
+  .ab-body.docbody{ display:block; overflow:visible; flex:none; }
+  @media (max-width:1040px){
+    .mh{ padding:0 16px; } .stage{ padding:16px; }
+    .app-box.docbox{ width:100% !important; height:auto !important; }
+    .ab-body.docbody{ overflow:visible !important; }
+    .docpane{ padding:22px 18px; } .doc-h{ font-size:22px; }
+  }
+</style>
+<script defer src="/assets/posthog.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "RecruitCloud",
+  "legalName": "RecruitCloud LLC",
+  "url": "https://recruitcloud.io/",
+  "logo": "https://recruitcloud.io/assets/apple-touch-icon.png",
+  "image": "https://recruitcloud.io/assets/og-card.png",
+  "email": "isaac@recruitcloud.io",
+  "description": "RecruitCloud helps internal recruiting teams build their own AI sourcing system: agents, sequencers, and a pipeline they own.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Miami Beach",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Isaac Marks",
+    "url": "https://www.linkedin.com/in/isaacmarks68"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/isaacmarks68",
+    "https://www.linkedin.com/company/recruitcloud"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does an agency hire actually cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the fee and the salary. A 20% contingency fee on a $100,000 role is $20,000; on a $150,000 role it is $30,000. That is why RecruitCloud's pricing page uses $15,000–$35,000 per placement as a reference range. Use your own average starting salary and contracted fee to get a number you can defend in a budget meeting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a reasonable cost-per-hire to compare against?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use a source, and say which year it is from. SHRM's 2022 public write-up cited an average of nearly $4,700. SHRM's 2025 benchmarking reports put the average at $5,475 for nonexecutive hires and $35,879 for executive hires. Those are blended recruiting costs, not a promise of what your first in-house search will cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does bringing sourcing in-house mean we can never use an agency or RPO again?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It means agencies and RPO stop being the default for role families you hire regularly. Specialist search, a new market, or a short surge can still be a reason to go outside. The goal is to stop renting the core pipeline."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will we have to replace our ATS to do this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The ATS stays the system of record. The sourcing and engagement layer sits on top of it. Replacing your ATS is a different project, and not a prerequisite for cutting agency spend."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to the system if we stop working with the team that built it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You should keep it. In a RecruitCloud engagement, you keep the agents, sequences, data, dashboard, and playbooks. If a vendor cannot say that clearly, you are looking at a retainer, not a build."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do we start without a year-long project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with one role family and a scoped build. A Build Sprint stands up the first working system and trains your team to run it. Scope the timeline against your roles; do not take a date from a blog post. Book a build session and bring your current vendor spend."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body class="flex flex-col min-h-screen page-bg">
+
+<!-- HEADER -->
+<div class="mh">
+  <div class="mh-logo">
+    <a href="/" style="text-decoration:none;" title="RecruitCloud home"><div class="logo-type">
+      <span>recruitcloud</span>
+      <span style="display:inline-flex;align-items:center;margin-left:4px;"><span style="display:inline-block;width:9px;height:17px;background:var(--brand);"></span></span>
+    </div></a>
+  </div>
+  <nav class="mh-nav">
+    <a href="/how-it-works.html" class="btn-text">how it works</a>
+    <a href="/what-you-build.html" class="btn-text">what you build</a>
+    <a href="/pricing.html" class="btn-text">pricing</a>
+    <a href="/faq.html" class="btn-text">faq</a>
+    <a href="/blog" class="btn-text">blog</a>
+  </nav>
+  <div class="mh-right">
+    <button class="mh-burger" id="mhBurger" aria-label="menu"><span></span><span></span><span></span></button>
+    <a class="btn-primary" href="/book.html">book a build session<span class="btn-icon" style="-webkit-mask-image:url('/assets/icons/chevron-right.svg');mask-image:url('/assets/icons/chevron-right.svg')"></span></a>
+  </div>
+</div>
+<div class="mh-mpanel" id="mhMPanel">
+  <nav class="mh-mpanel-nav">
+    <a class="mh-mlink" href="/how-it-works.html">how it works</a>
+    <a class="mh-mlink" href="/what-you-build.html">what you build</a>
+    <a class="mh-mlink" href="/pricing.html">pricing</a>
+    <a class="mh-mlink" href="/faq.html">faq</a>
+    <a class="mh-mlink" href="/blog">blog</a>
+  </nav>
+  <a class="btn-primary mh-mpanel-cta" href="/book.html">book a build session</a>
+</div>
+
+<!-- CONSOLE -->
+<div class="stage">
+  <div class="app-box docbox">
+    <span class="cm tl"></span><span class="cm tr"></span><span class="cm bl"></span><span class="cm br"></span>
+    <div class="ab-top">
+      <div class="traffic"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+      <span class="ab-title">RecruitCloud Blog</span>
+    </div>
+    <div class="ab-body docbody">
+      <div class="docpane">
+        <div class="doc-eyebrow">// cut agency spend in house sourcing</div>
+<h1 class="doc-h">How to cut agency/RPO spend by building sourcing in-house</h1>
+
+<p>If your internal recruiting team is busy and a role is still open, the usual move is to send it out. A contingency firm takes the search, or an RPO engagement absorbs a book of reqs. The hire gets made. The invoice arrives. Next quarter, you do it again.</p>
+
+<p>That loop is expensive because it is designed to be: you pay for effort you do not keep. The way out is not a cheaper agency. It is to <a href="https://recruitcloud.io/what-you-build.html" class="inline-link">build the sourcing capability inside your team</a> so you fill more roles in-house and stop paying the markup every time.</p>
+
+<h2 class="doc-h2">What you are actually paying for</h2>
+
+<p>A contingency recruiter does real work: market mapping, outreach, screening, coordination. The standard price, <a href="https://recruitcloud.io/" class="inline-link">as we put it on the homepage</a>, is a <b>20% contingency fee</b> on first-year salary, due when the hire is made. You do not pay if they fail — and you also do not keep the pipeline or the relationships if they succeed. The next similar role starts the fee over.</p>
+
+<p>RPO is the same idea at program scale: a retained recruiting function, often under your brand, for a book of hires. Useful during a surge. Still a vendor system. When the contract ends, the process and the candidate data typically go with the provider.</p>
+
+<p>Neither model is a scandal. Both are rentals. If you already have an in-house TA team, the question is whether those invoices are a burst of capacity — or how you source every year.</p>
+
+<h2 class="doc-h2">The numbers, with the sources attached</h2>
+
+<p><a href="https://recruitcloud.io/pricing.html" class="inline-link">RecruitCloud's pricing page</a> uses three reference points for the spend this kind of system is meant to replace:</p>
+
+<p>1. <b>An agency placement in the $15,000–$35,000 per hire range.</b> That band is consistent with a 20% contingency fee on mid-to-senior salaries — for example, 20% of a $100,000 role is $20,000; 20% of a $150,000 role is $30,000. It is a reference range, not a quote for your reqs. Run the math on your own average starting salary and fee.</p>
+
+<p>2. <b>RPO at roughly $200,000–$500,000 for 50 hires a year.</b> That is the planning range we use on the pricing page. Contracts vary by model (per-hire, retainer, hybrid, project), so compare it to your invoices rather than treating it as a survey average.</p>
+
+<p>3. <b>A widely cited cost-per-hire figure of about $4,700.</b> That number comes from SHRM. In April 2022, SHRM reported that <a href="https://www.shrm.org/topics-tools/news/talent-acquisition/real-costs-recruitment" class="inline-link">the average cost per hire was nearly $4,700</a>. The more recent public figure is higher: SHRM's 2025 benchmarking reports put <a href="https://www.shrm.org/about/press-room/shrm-releases-2025-benchmarking-reports--how-does-your-organizat" class="inline-link">average cost-per-hire at $5,475 for nonexecutive roles and $35,879 for executive roles</a> (2,371 SHRM members, surveyed January 9–March 3, 2025; released October 15, 2025).</p>
+
+<p>One caveat, because these numbers get misused: SHRM's cost-per-hire is a blended recruiting cost — it can include agency fees, job boards, recruiter pay, and systems, divided by hires. It is not "the cost of an in-house hire with zero vendor spend." The number that matters in a build decision is what *you* already pay vendors, plus what it costs to run sourcing on your own team.</p>
+
+<h2 class="doc-h2">What the gap looks like in practice</h2>
+
+<p>Keep the comparison to arithmetic on the fee you already know.</p>
+
+<p>Say you fill 10 roles a year through agencies at a 20% fee, and those roles average $150,000 in first-year salary. That is 10 × $30,000, or <b>$300,000 a year</b>, before internal interview time. At a $100,000 average salary, 10 placements are $200,000; 20 placements are $400,000.</p>
+
+<p>Put SHRM's 2025 nonexecutive average next to it, only as a benchmark: $5,475 × 10 hires is about $55,000. Even if your true in-house cost lands higher — hard-to-fill roles, or a fuller fully-loaded recruiter cost — the order of magnitude is the point. Contingency fees stack. A system you run at internal cost does not reset to 20% on every accepted offer.</p>
+
+<p>RPO can look cheaper than agencies at volume. The pricing-page reference of ~$200,000–$500,000 for 50 hires is still a large, recurring program cost — and the capability still sits on their side of the contract.</p>
+
+<h2 class="doc-h2">Why the spend comes back every year</h2>
+
+<p>Vendor sourcing does not transfer. The outreach that got replies, the map of who would take a conversation, the rejected-but-worth-a-look candidates — that work is the vendor's book of business. You bought a hire, not a system.</p>
+
+<p>That is why "we'll just use agencies less next year" rarely holds. The "one-off" requisition has a sibling six months later, and without an in-house pipeline you are back on the phone with the same firms. Buying another SaaS seat does not automatically fix it — plenty of teams still send overflow out because the tool never got adopted. <a href="https://recruitcloud.io/faq.html" class="inline-link">The stall is on workflow, data quality, recruiter adoption, and governance</a>.</p>
+
+<h2 class="doc-h2">What "building sourcing in-house" actually means</h2>
+
+<p>It does not mean hiring one more recruiter and hoping the agency line item shrinks. It means standing up a <a href="/blog/what-is-an-ai-sourcing-system" class="inline-link">sourcing system your team operates</a>: agents that continuously surface off-market, signal-matched candidates for your roles; sequencers that do the multi-channel follow-up; an intent-signal data layer (tenure, promotions, team changes) in a store you own; and a live pipeline on top of the ATS you already run.</p>
+
+<p>The ATS stays. The recruiters stay. Sourcing and engagement are no longer rented: your team runs the system, and the output stays in your environment.</p>
+
+<p>RecruitCloud <a href="https://recruitcloud.io/how-it-works.html" class="inline-link">builds that system with you</a>. We map the roles you are filling, the tools you already pay for, and what agencies and RPO cost you today, then stand up the first working system for one role family — a <a href="https://recruitcloud.io/pricing.html" class="inline-link">Build Sprint</a> — and train your team to run it. A System Partner engagement extends the same build across role families. Pricing is scoped to your volume and vendor spend. The goal is the one on the pricing page: <b>the system you own should cost less than the agency invoices it replaces.</b></p>
+
+<h2 class="doc-h2">A practical path, not a rip-and-replace</h2>
+
+<p>You do not have to insource every req on day one. Executive search, a new geography, or a surge can still justify a specialist.</p>
+
+<p><b>Map the spend.</b> Pull 12 months of agency fees, RPO invoices, and overlapping tool costs, by role family. If you cannot name what you spent and what you got, you are not ready to brief a build. This is the first step of <a href="https://recruitcloud.io/how-it-works.html" class="inline-link">how we start</a>.</p>
+
+<p><b>Pick one role family.</b> Choose a cluster you hire repeatedly, where past hires make the profile knowable, and where agency spend is concentrated. Stand up a live pipeline your recruiters can run.</p>
+
+<p><b>Wire it into what you already own.</b> Do not migrate ATSs as part of a sourcing project. Plug the new layer into the system of record so recruiters can see candidates, signals, and messages without a side process.</p>
+
+<p><b>Keep overflow honest.</b> Use agencies for true exceptions while the first system comes up — not for the same role family, out of habit, once the in-house pipeline is live.</p>
+
+<p><b>Decide what happens if you part ways.</b> If you lose the data and start over, you are still renting. If you keep the agents, sequences, data, dashboard, and playbooks, you are building an asset. <a href="https://recruitcloud.io/what-you-build.html" class="inline-link">That is the ownership contract</a>.</p>
+
+<h2 class="doc-h2">What you keep when the invoices stop</h2>
+
+<p>An agency or RPO can reduce time-to-fill for a season. They cannot leave you the machine. When we build with a team, <a href="https://recruitcloud.io/faq.html" class="inline-link">you keep all of it if we stop working together</a> — no lock-in, and no platform that owns your pipeline. Bring the role family and the invoices to a build session; we will work from those, not from a generic benchmark.</p>
+
+<p class="cta"><a href="https://recruitcloud.io/book.html">Book a build session →</a></p>
+
+<h2 class="doc-h2">FAQ</h2>
+
+<h3 class="doc-h3">How much does an agency hire actually cost?</h3>
+
+<p>It depends on the fee and the salary. A 20% contingency fee on a $100,000 role is $20,000; on a $150,000 role it is $30,000. That is why <a href="https://recruitcloud.io/pricing.html" class="inline-link">our pricing page</a> uses $15,000–$35,000 per placement as a reference range. Use your own average salary and fee.</p>
+
+<h3 class="doc-h3">What is a reasonable cost-per-hire to compare against?</h3>
+
+<p>Use a source, and say which year it is from. SHRM's 2022 write-up cited an average of <a href="https://www.shrm.org/topics-tools/news/talent-acquisition/real-costs-recruitment" class="inline-link">nearly $4,700</a>. The 2025 benchmarking reports put the average at <a href="https://www.shrm.org/about/press-room/shrm-releases-2025-benchmarking-reports--how-does-your-organizat" class="inline-link">$5,475 for nonexecutive hires and $35,879 for executive hires</a>. Those are blended recruiting costs, not a promise of what your first in-house search will cost.</p>
+
+<h3 class="doc-h3">Does bringing sourcing in-house mean we can never use an agency or RPO again?</h3>
+
+<p>No. It means agencies and RPO stop being the default for role families you hire regularly. Specialist search, a new market, or a short surge can still be a reason to go outside. The goal is to stop renting the core pipeline.</p>
+
+<h3 class="doc-h3">Will we have to replace our ATS to do this?</h3>
+
+<p><a href="https://recruitcloud.io/faq.html" class="inline-link">No</a>. The ATS stays the system of record. The sourcing and engagement layer sits on top of it. Replacing your ATS is a different project, and not a prerequisite for cutting agency spend.</p>
+
+<h3 class="doc-h3">What happens to the system if we stop working with the team that built it?</h3>
+
+<p>You should keep it. In a RecruitCloud engagement, <a href="https://recruitcloud.io/what-you-build.html" class="inline-link">you keep the agents, sequences, data, dashboard, and playbooks</a>. If a vendor cannot say that clearly, you are looking at a retainer, not a build.</p>
+
+<h3 class="doc-h3">How do we start without a year-long project?</h3>
+
+<p>Start with one role family and a scoped build. A <a href="https://recruitcloud.io/pricing.html" class="inline-link">Build Sprint</a> stands up the first working system and trains your team to run it. Scope the timeline against your roles; do not take a date from a blog post. <a href="https://recruitcloud.io/book.html" class="inline-link">Book a build session</a> and bring your current vendor spend.</p>
+
+<!--
+Implementer notes (not for the live page):
+Sources cited in the body:
+- 20% contingency fee: https://recruitcloud.io/ (homepage: "not through 20% contingency fees")
+- $15,000–$35,000 agency placement reference and ~$200k–$500k RPO for 50 hires: https://recruitcloud.io/pricing.html (site reference ranges; the $15k–$35k band is NOT cited here as a SHRM finding — SHRM's public reports give cost-per-hire, not that agency-fee range)
+- SHRM 2022 "nearly $4,700": https://www.shrm.org/topics-tools/news/talent-acquisition/real-costs-recruitment (April 11, 2022)
+- SHRM 2025 averages $5,475 nonexecutive / $35,879 executive: https://www.shrm.org/about/press-room/shrm-releases-2025-benchmarking-reports--how-does-your-organizat (October 15, 2025)
+Worked examples (10 × 20% of $150k = $300k, etc.) are arithmetic on the 20% fee, clearly labeled as "say you…".
+Consider updating pricing.html later so the $4,700 line cites the 2022 SHRM article and notes the 2025 figures. Do not ship this article if legal/marketing wants to keep attributing the $15k–$35k range to SHRM — that attribution is not supported by SHRM's public benchmarking releases reviewed for this draft.
+-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="mf">
+  <a href="/how-it-works.html">How it works</a>
+  <a href="/what-you-build.html">What you build</a>
+  <a href="/pricing.html">Pricing</a>
+  <a href="/faq.html">FAQ</a>
+  <a href="/blog">Blog</a>
+  <a href="/privacy-policy.html">Privacy</a>
+  <a href="/terms-of-service.html">Terms</a>
+  <a href="/remove-my-data.html">Remove my data</a>
+  <a href="https://www.linkedin.com/in/isaacmarks68/" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="mailto:isaac@recruitcloud.io">isaac@recruitcloud.io</a>
+</div>
+
+<script>
+(function(){
+  function rand(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+  function delay(ms){return new Promise(r=>setTimeout(r,ms));}
+  const burger=document.getElementById('mhBurger'), panel=document.getElementById('mhMPanel');
+  if(!burger||!panel) return;
+  const links=Array.prototype.slice.call(panel.querySelectorAll('.mh-mlink'));
+  let open=false,closeTimer=null;
+  function openMenu(){ if(open)return; open=true; clearTimeout(closeTimer); burger.classList.add('open'); panel.classList.remove('closing'); panel.classList.add('open'); links.forEach(l=>l.classList.remove('shown')); (async()=>{for(const l of links){await delay(rand(45,85)); if(!open)return; l.classList.add('shown');}})(); }
+  function closeMenu(){ if(!open)return; open=false; burger.classList.remove('open'); panel.classList.add('closing'); closeTimer=setTimeout(()=>{panel.classList.remove('open','closing'); links.forEach(l=>l.classList.remove('shown'));},140); }
+  burger.addEventListener('click',()=>open?closeMenu():openMenu());
+})();
+</script>
+<script src="/assets/booking-attribution.js" defer></script>
+</body>
+</html>
