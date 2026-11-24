@@ -1,0 +1,132 @@
+.blog-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--fg-primary);
+}
+
+.blog-header,
+.blog-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  padding: 20px clamp(20px, 5vw, 72px);
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--divider);
+  font: 400 13px/1.5 var(--font-mono);
+}
+
+.blog-header .logo-type {
+  text-decoration: none;
+}
+
+.blog-header .logo-type span {
+  width: 8px;
+  height: 17px;
+  margin-left: 4px;
+  background: var(--brand);
+}
+
+.blog-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.blog-header a,
+.blog-footer a,
+.blog-meta a,
+.blog-back {
+  color: var(--brand-tint);
+  text-decoration: none;
+}
+
+.blog-header a:hover,
+.blog-footer a:hover,
+.blog-meta a:hover,
+.blog-back:hover {
+  text-decoration: underline;
+}
+
+.blog-main {
+  width: min(100% - 40px, 770px);
+  flex: 1;
+  margin: clamp(40px, 7vw, 90px) auto 76px;
+}
+
+.blog-intro {
+  margin-bottom: 32px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--divider);
+}
+
+.blog-back,
+.blog-meta {
+  font: 400 13px/1.6 var(--font-mono);
+}
+
+.blog-meta {
+  margin: 16px 0 0;
+  color: var(--fg-secondary);
+}
+
+.blog-intro h1 {
+  margin: 14px 0 0;
+  color: var(--fg-bright);
+  font: 700 clamp(29px, 5.6vw, 56px)/1.1 var(--font-mono);
+  letter-spacing: -0.055em;
+}
+
+.blog-prose,
+.blog-entry {
+  font: 400 clamp(16px, 2.4vw, 18px)/1.72 system-ui, sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.blog-prose p {
+  margin: 0 0 1.2em;
+}
+
+.blog-prose p:first-child {
+  color: var(--fg-bright);
+  font-size: 1.23em;
+  font-weight: 650;
+}
+
+.blog-prose h2,
+.blog-entry h2 {
+  margin: 1.9em 0 0.65em;
+  color: var(--fg-bright);
+  font: 700 clamp(21px, 3vw, 28px)/1.25 var(--font-mono);
+  letter-spacing: -0.035em;
+}
+
+.blog-prose a,
+.blog-entry h2 a {
+  color: var(--brand-tint);
+  text-underline-offset: 3px;
+}
+
+.blog-entry {
+  padding: clamp(18px, 4vw, 28px);
+  background: var(--bg-terminal);
+  border: 1px solid var(--divider);
+}
+
+.blog-entry .blog-meta,
+.blog-entry h2 {
+  margin-top: 0;
+}
+
+.blog-entry p:last-child {
+  margin: 0;
+  color: var(--fg-secondary);
+}
+
+.blog-footer {
+  justify-content: flex-start;
+  border-top: 1px solid var(--divider);
+  border-bottom: 0;
+}
